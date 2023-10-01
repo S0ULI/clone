@@ -8,8 +8,8 @@ const Navbar = () => {
   return (
     <nav>
       <ul className="flex gap-4">
-        <NavItem title="Home" link="/" Icon={GoHomeFill} />
         <NavItem title="About" link="/about" Icon={TbInfoSquareRoundedFilled} />
+        <NavItem title="Home" link="/" Icon={GoHomeFill} />
       </ul>
     </nav>
   );
