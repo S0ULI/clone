@@ -1,12 +1,15 @@
+import NextThemeProvider from './store/NextThemeProvider';
 import Header from './components/header/Header';
+
 import './globals.css';
-import { Poppins } from 'next/font/google';
+// import { Poppins } from 'next/font/google';
 
 // Adding Font
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-});
+// remember to add this class name to body className={poppins.className}
+// const poppins = Poppins({
+//   subsets: ['latin'],
+//   weight: ['400', '500', '600', '700', '800'],
+// });
 
 // Defining Metadata
 export const metadata = {
@@ -18,9 +21,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
-        <Header />
-        {children}
+      <body>
+        <NextThemeProvider>
+          <Header />
+          {children}
+        </NextThemeProvider>
       </body>
     </html>
   );
