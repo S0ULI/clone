@@ -25,7 +25,9 @@ module.exports = {
 
         // text colors
         'text-color': '#000000',
-        'nav-list-color': '#000000',
+        'nav-list-color': '#7a7a7a',
+        'nav-list-color-hover': '#000000',
+        'dark-nav-list-color-hover': '#ffffff',
       },
     },
   },

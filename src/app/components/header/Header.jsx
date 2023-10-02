@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 
 const Header = () => {
   return (
-    <header className="bg-background-color-c dark:bg-dark-background-color-c">
+    <header className="border-b border-accent-color">
       <SectionWrapper styles={'flex justify-between items-center'}>
         <Logo />
         <div className="flex gap-12">
