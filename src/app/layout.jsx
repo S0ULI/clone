@@ -1,15 +1,31 @@
+import localFont from 'next/font/local';
 import NextThemeProvider from './store/NextThemeProvider';
 import Header from './components/header/Header';
 
 import './globals.css';
-// import { Poppins } from 'next/font/google';
 
-// Adding Font
-// remember to add this class name to body className={poppins.className}
-// const poppins = Poppins({
-//   subsets: ['latin'],
-//   weight: ['400', '500', '600', '700', '800'],
-// });
+// adding Font
+const poppins = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Poppins/Poppins-Medium.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/Poppins/Poppins-SemiBold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/Poppins/Poppins-ExtraBold.ttf',
+      weight: '800',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-poppins',
+  display: 'swap',
+});
 
 // Defining Metadata
 export const metadata = {
@@ -21,7 +37,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={poppins.className}>
         <NextThemeProvider>
           <Header />
           {children}
