@@ -24,10 +24,15 @@ module.exports = {
         'dark-foreground-color': '#ffffff',
 
         // text colors
-        'text-color': '#000000',
         'nav-list-color': '#7a7a7a',
         'nav-list-color-hover': '#000000',
+        'strong-text-color': '#1f1f1f',
+        'bright-text-color': '#4d4d4d',
+        // text colors --> Dark Mode
+        'dark-nav-list-color': '#7a7a7a',
         'dark-nav-list-color-hover': '#ffffff',
+        'dark-strong-text-color': 'f1f1f1',
+        'dark-bright-text-color': '#ababab',
       },
     },
   },
