@@ -1,6 +1,8 @@
-const SectionWrapper = ({ styles, children }) => {
+const SectionWrapper = ({ styles, mtn, children }) => {
+  const margin = mtn ? '' : 'mt-8';
+
   return (
-    <section className={styles + ' max-w-7xl m-auto py-4 px-8'}>
+    <section className={`${styles} ${margin} max-w-7xl m-auto px-8`}>
       {children}
     </section>
   );
