@@ -1,7 +1,7 @@
 import SectionWrapper from '../components/layout/SectionWrapper';
 const AboutPage = () => {
   return (
-    <SectionWrapper styles={'flex flex-col gap-6 mt-6'}>
+    <SectionWrapper mSt={'flex flex-col gap-6 mt-6'}>
       <h1 className="text-4xl font-bold text-primary-color">About</h1>
       <article>
         <p className="text-dark-bright-text-color text-justify text-lg leading-7">

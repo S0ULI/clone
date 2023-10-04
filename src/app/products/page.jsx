@@ -11,7 +11,7 @@ const ProductPage = async ({ searchParams }) => {
   const data = await getAllProducts(sort, page);
 
   return (
-    <SectionWrapper styles={'flex gap-6 justify-between'}>
+    <SectionWrapper mSt={'flex gap-6 justify-between'}>
       <div className='w-full flex flex-col gap-8'>
         {/* <h1 className="text-2xl font-semibold text-primary-color">Movies</h1> */}
       <SideBar />

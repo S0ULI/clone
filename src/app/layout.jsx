@@ -1,7 +1,6 @@
 import localFont from 'next/font/local';
 import NextThemeProvider from './store/NextThemeProvider';
 import Header from './components/header/Header';
-import styled from "styled-jsx";
 
 import './globals.css';
 
@@ -30,14 +29,14 @@ const poppins = localFont({
 
 // Defining Metadata
 export const metadata = {
-  title: 'IMDb clone',
-  description: 'finding new movies to watch',
+  title: 'lone',
+  description: 'something',
 };
 
 // JSX Function
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={poppins.className}>
         <NextThemeProvider>
           <Header />

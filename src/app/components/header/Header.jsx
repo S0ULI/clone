@@ -6,7 +6,7 @@ import Navbar from './Navbar';
 const Header = () => {
   return (
     <header className="bg-header-bg-color/90 backdrop-blur-md">
-      <SectionWrapper styles={'flex justify-between items-center py-4'} mtn={true}>
+      <SectionWrapper mSt={'flex justify-between items-center py-4'} mtn={true}>
         <Logo />
         <div className="flex gap-12">
           <Navbar />

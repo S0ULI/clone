@@ -25,10 +25,6 @@ const Card = ({ data }) => {
         alt={title}
         width={600}
         height={500}
-        style={{
-          maxWidth: '100%',
-          height: 'auto',
-        }}
         src={`https://image.tmdb.org/t/p/w500/${backdrop_path || poster_path}`}
       />
       <div className="flex flex-col items-center text-center gap-4 py-4 px-4">
