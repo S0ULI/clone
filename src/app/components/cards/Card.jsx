@@ -4,22 +4,38 @@ import Link from 'next/link';
 const Card = ({ data }) => {
   const { id, title, vote_average, poster_path, backdrop_path } = data;
 
+  const limitTitleHandler = (givenTitle, limit) => {
+    let newTitle = '';
+
+    if (givenTitle.length > limit) {
+      for (let i = 0; i < limit; i++) {
+        newTitle += givenTitle[i];
+      }
+      newTitle += '...';
+      return newTitle;
+    } else return givenTitle;
+  };
+
   return (
     <Link
       href={`/movie/${id}`}
-      className="flex flex-col bg-background-color-c dark:bg-foreground-color  rounded-xl w-64 overflow-hidden"
+      className="flex flex-col w-full sm:max-w-[17rem] bg-background-color-c dark:bg-foreground-color  rounded-xl overflow-hidden hover:-translate-y-2 hover:scale-[1.01] scale-100 transition-all duration-300"
     >
       <Image
         alt={title}
-        width={500}
+        width={600}
         height={500}
         src={`https://image.tmdb.org/t/p/w500/${backdrop_path || poster_path}`}
       />
-      <div className='flex flex-col gap-4 p-4'>
-      <span className='bg-primary-color p-2 rounded-full text-center'>{vote_average}</span>
-      <h3><span>Title : </span><span className='text-dark-gray-color'>{title}</span></h3>
+      <div className="flex flex-col items-center text-center gap-4 py-4 px-4">
+        <h3 className="bg-background-color-p dark:bg-dark-background-color-p text-dark-gray-color dark:text-light-gray-color p-2 rounded-full w-full">
+          {limitTitleHandler(title, 24)}
+        </h3>
+        <span>{vote_average}</span>
       </div>
-      <button className='bg-shop-button-color dark:bg-background-color-c dark:text-text-color-dark hover:bg-secondary-color dark:hover:bg-secondary-color  py-4 text-background-color-c rounded-xl transition-all duration-300'>Add to Favorites</button>
+      <button className="hover:bg-shop-button-color bg-secondary-color/80 dark:hover:bg-background-color-c dark:text-text-color-dark  dark:bg-cyan-600  py-4 text-background-color-c rounded-xl transition-all duration-300">
+        Add to Favorites
+      </button>
     </Link>
   );
 };
