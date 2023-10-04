@@ -1,5 +1,6 @@
 'use client';
 import { ThemeProvider } from 'next-themes';
+import styled from 'styled-jsx';
 
 const NextThemeProvider = ({ children }) => {
   return (
