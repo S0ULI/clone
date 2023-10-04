@@ -2,7 +2,7 @@ import PaginationItem from './PaginationItem';
 
 const Pagination = ({ currentPage, sort }) => {
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 self-center mt-10">
       {currentPage == 1 ? null : (
         <PaginationItem pageNum={currentPage - 1} sort={sort} />
       )}
