@@ -16,7 +16,7 @@ module.exports = {
 
         // background colors
         'background-color-p': '#EAD8BF', // changed
-        'background-color-c': '#f5f5f5',
+        'background-color-c': '#ffffff',
         'foreground-color': '#000000',
         //dark mode
         'dark-background-color-p': '#002A33', // changed
