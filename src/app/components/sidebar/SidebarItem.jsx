@@ -3,10 +3,9 @@
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
-const SidebarItem = ({ title, params, ...rest }) => {
+const SidebarItem = ({ title, params }) => {
   const searchParams = useSearchParams();
   const currentParams = searchParams.get('sort');
-  console.log(currentParams, params);
 
   const activeClass =
     currentParams && currentParams === params && 'text-primary-color';
