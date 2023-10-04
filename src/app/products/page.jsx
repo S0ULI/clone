@@ -1,4 +1,4 @@
-import SectionWrapper from '../components/SectionWrapper';
+import SectionWrapper from '../components/layout/SectionWrapper';
 import Pagination from '../components/pagination/Pagination';
 import SideBar from '../components/sidebar/Sidebar';
 import Cards from '../components/cards/Cards';

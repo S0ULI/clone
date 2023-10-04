@@ -1,4 +1,4 @@
-import SectionWrapper from './components/SectionWrapper';
+import SectionWrapper from './components/layout/SectionWrapper';
 
 const API_KEY = process.env.API_KEY;
 export default function Home() {

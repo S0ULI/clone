@@ -10,22 +10,26 @@ module.exports = {
     extend: {
       colors: {
         // primary colors
-        'primary-color': '#ff7b00',
-        'secondary-color': '#00e9f1',
+        'primary-color': '#FF6517', // changed FF6517
+        'secondary-color': '#FC8C54',
         'accent-color': '#00ffbf',
 
         // background colors
-        'background-color-p': '#ffffff',
+        'background-color-p': '#EAD8BF', // changed
         'background-color-c': '#f5f5f5',
         'foreground-color': '#000000',
         //dark mode
-        'dark-background-color-p': '#0a0a0a',
+        'dark-background-color-p': '#002A33', // changed
         'dark-background-color-c': '#1f1f1f',
         'dark-foreground-color': '#ffffff',
 
         // text colors
+        'light-gray-color': '#cccccc', // added
+        'dark-gray-color': '#505050', // added
+        'text-color-white': '#ffffff', // added
+        'text-color-dark': '#000000', // added
         'nav-list-color': '#7a7a7a',
-        'nav-list-color-hover': '#000000',
+        'nav-list-color-hover': '#ffffff',
         'strong-text-color': '#1f1f1f',
         'bright-text-color': '#4d4d4d',
         // text colors --> Dark Mode
@@ -33,6 +37,11 @@ module.exports = {
         'dark-nav-list-color-hover': '#ffffff',
         'dark-strong-text-color': 'f1f1f1',
         'dark-bright-text-color': '#ababab',
+
+        // theme
+        'header-bg-color': '#000000', // added 
+        'shop-button-color': '#000000', // added
+
       },
     },
   },

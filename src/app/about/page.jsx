@@ -1,4 +1,4 @@
-import SectionWrapper from '../components/SectionWrapper';
+import SectionWrapper from '../components/layout/SectionWrapper';
 const AboutPage = () => {
   return (
     <SectionWrapper styles={'flex flex-col gap-6 mt-6'}>

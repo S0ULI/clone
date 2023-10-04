@@ -29,7 +29,7 @@ const DarkModeSwitch = () => {
   return (
     <button
       onClick={themeHandler}
-      className="text-2xl hover:text-primary-color transition-all duration-300 rotate-0 hover:rotate-180 scale-100 hover:scale-125"
+      className="text-2xl text-background-color-p hover:text-cyan-500 dark:text-cyan-500 dark:hover:text-primary-color  transition-all duration-300 rotate-0 hover:rotate-180 scale-100 hover:scale-125"
     >
       {currentTheme === 'dark' ? <MdLightMode /> : <BsFillMoonFill />}
     </button>
