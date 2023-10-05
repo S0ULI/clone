@@ -23,13 +23,19 @@ const Card = ({ data }) => {
     >
       <Image
         alt={title}
-        width={600}
-        height={500}
+        width={500}
+        height={282}
+        placeholder='blur'
+        blurDataURL='/spinner.svg'
+        style={{
+          maxWidth: '100%',
+          height: '152px'
+        }}
         src={`https://image.tmdb.org/t/p/w500/${backdrop_path || poster_path}`}
       />
       <div className="flex flex-col items-center text-center gap-4 py-4 px-4">
         <h3 className="bg-background-color-p dark:bg-dark-background-color-p text-dark-gray-color dark:text-light-gray-color p-2 rounded-full w-full">
-          {limitTitleHandler(title, 24)}
+          {limitTitleHandler(title, 22)}
         </h3>
         <span>{vote_average}</span>
       </div>
