@@ -29,7 +29,7 @@ const poppins = localFont({
 
 // Defining Metadata
 export const metadata = {
-  title: 'lone',
+  title: 'clone',
   description: 'something',
 };
 
