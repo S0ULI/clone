@@ -20,9 +20,9 @@ export const getAllProducts = async (sort, page) => {
   )
   
   // Error Handling
-  if(!res.ok){
-    throw new Error('failed to fetch data')
-  }
+  // if(!res.ok){
+  //   throw new Error('failed to fetch data')
+  // }
   // Storing Data
   const data = await res.json();
 
