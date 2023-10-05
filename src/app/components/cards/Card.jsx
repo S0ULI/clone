@@ -2,12 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const Card = ({ data }) => {
-  const { id, title, vote_average, poster_path, backdrop_path, overview } =
-    data;
+  const { id, title, vote_average, poster_path, backdrop_path, overview } = data;
+
+  const slug = title.split(' ').join('-').toLowerCase()
 
   return (
     <Link
-      href={`/movie/${id}`}
+      href={`/products/${id}`}
       className="flex flex-col w-full sm:max-w-[17rem] bg-background-color-c dark:bg-foreground-color  rounded-xl overflow-hidden hover:-translate-y-2 opacity-90 hover:opacity-100 transition-all duration-300"
     >
       <Image
