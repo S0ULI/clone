@@ -16,7 +16,7 @@ const ProductPage = async ({ searchParams }) => {
         {/* <h1 className="text-2xl font-semibold text-primary-color">Movies</h1> */}
       <SideBar />
         <Cards data={data.results} />
-      <Pagination currentPage={data.page} sort={searchParams.sort}  />
+      <Pagination currentPage={data.page} totalPages={data.total_pages} sort={searchParams.sort}  />
       </div>
     </SectionWrapper>
   );
