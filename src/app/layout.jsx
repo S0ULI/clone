@@ -1,5 +1,5 @@
 import localFont from 'next/font/local';
-import NextThemeProvider from './store/NextThemeProvider';
+import Providers from './providers';
 import Header from './components/header/Header';
 
 import './globals.css';
@@ -38,10 +38,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={poppins.className}>
-        <NextThemeProvider>
+        <Providers>
           <Header />
           {children}
-        </NextThemeProvider>
+        </Providers>
       </body>
     </html>
   );
