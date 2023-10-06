@@ -17,6 +17,10 @@ const page = async ({ params }) => {
     vote_average,
     tagline,
     genres,
+    budget,
+    revenue,
+    original_language,
+    original_title
   } = data;
 
   // getting only the year release
@@ -51,23 +55,44 @@ const page = async ({ params }) => {
           }`}
         />
         <div className="flex flex-col gap-4 w-full sm:min-w-[250px] max-w-lg">
-          <h2 className="text-xl">{`" ${tagline} "`}</h2>
+          <h2 className="text-xl">{`" ${original_title}: ${tagline || `This is ${title}`} "`}</h2>
           <div className="flex gap-4">
             <span>
               <RatingProgress rating={vote_average} />
             </span>
             <span>{vote_average}</span>
           </div>
-          <p className="text-dark-nav-list-color flex flex-col gap-2">
-            <span className="dark:text-light-gray-color text-text-color-white">
-              Description:{' '}
+          <p className="text-dark-nav-list-color flex flex-col gap-1">
+            <span className="dark:text-light-gray-color text-strong-text-color">
+              Description: 
             </span>
             {overview}
           </p>
-          <div className='flex gap-2'>
-            {
-              genres.map((genre) => <span key={genre.id} className='bg-secondary-color py-1 px-2 rounded-xl text-sm'>{genre.name}</span>)
-            }
+          <div className="flex flex-col gap-1 text-sm dark:text-light-gray-color text-strong-text-color">
+            <div>
+              <span>Budget: </span>
+              <span className="text-dark-nav-list-color">{budget}</span>
+            </div>
+            <div>
+              <span>Revenue: </span>
+              <span className="text-dark-nav-list-color">{revenue}</span>
+            </div>
+            <div>
+              <span>Original Language: </span>
+              <span className="text-dark-nav-list-color">
+                {original_language}
+              </span>
+            </div>
+          </div>
+          <div className="flex gap-2">
+            {genres.map((genre) => (
+              <span
+                key={genre.id}
+                className="bg-secondary-color py-1 px-2 rounded-xl text-sm"
+              >
+                {genre.name}
+              </span>
+            ))}
           </div>
         </div>
       </div>
