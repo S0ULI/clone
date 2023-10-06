@@ -8,7 +8,16 @@ const page = async ({ params }) => {
   const productId = params.productId;
   const data = await getProductById(productId);
 
-  const { title, release_date, poster_path, backdrop_path, overview, vote_average, tagline } = data;
+  const {
+    title,
+    release_date,
+    poster_path,
+    backdrop_path,
+    overview,
+    vote_average,
+    tagline,
+    genres,
+  } = data;
 
   // getting only the year release
   const yearHandler = (date) => {
@@ -17,39 +26,52 @@ const page = async ({ params }) => {
   };
 
   return (
-    <div>
-      <SectionWrapper mst="flex flex-col">
-        <div className="flex justify-center bg-background-color-c dark:bg-black/90 w-full p-4 rounded-xl">
-          <h1 className="py-2 px-6 truncate rounded-lg text-text-color-dark bg-background-color-p dark:text-dark-nav-list-color-hover dark:bg-dark-background-color-p">{`${title} ${yearHandler(
-            release_date
-          )}`}</h1>
-        </div>
-        <div className='mt-8 flex flex-col sm:flex-row justify-center gap-6'>
-          <div className="overflow-hidden rounded-xl w-full">
-            <Image
-              alt={title}
-              width={500}
-              height={282}
-              placeholder="blur"
-              blurDataURL="/spinner.svg"
-              style={{
-                width: '100%',
-                height: 'auto',
-                objectFit: 'cover'
-              }}
-              src={`https://image.tmdb.org/t/p/w500/${
-                poster_path || backdrop_path
-              }`}
-            />
+    <SectionWrapper mSt="flex flex-col h-full sm:h-screen">
+      <div className="flex justify-center bg-background-color-c dark:bg-black/90 w-full p-4 rounded-xl">
+        <h1 className="py-2 px-6 truncate rounded-lg text-text-color-dark bg-background-color-p dark:text-dark-nav-list-color-hover dark:bg-dark-background-color-p">{`${title} ${yearHandler(
+          release_date
+        )}`}</h1>
+      </div>
+      <div className="flex flex-col justify-center items-center gap-6 sm:flex-row sm:items-start mt-8">
+        <Image
+          alt={title}
+          width={500}
+          height={282}
+          placeholder="blur"
+          blurDataURL="/spinner.svg"
+          style={{
+            maxHeight: '70vh',
+            width: '100%',
+            maxWidth: '400px',
+            objectFit: 'cover',
+            borderRadius: '0.75rem',
+          }}
+          src={`https://image.tmdb.org/t/p/w500/${
+            poster_path || backdrop_path
+          }`}
+        />
+        <div className="flex flex-col gap-4 w-full sm:min-w-[250px] max-w-lg">
+          <h2 className="text-xl">{`" ${tagline} "`}</h2>
+          <div className="flex gap-4">
+            <span>
+              <RatingProgress rating={vote_average} />
+            </span>
+            <span>{vote_average}</span>
           </div>
-          <div className='flex flex-col justify-start gap-4'>
-              <h2>{tagline}</h2>
-              <p><span>Rating: {vote_average}</span><span><RatingProgress rating={vote_average}/></span></p>
-              <p>{overview}</p>
+          <p className="text-dark-nav-list-color flex flex-col gap-2">
+            <span className="dark:text-light-gray-color text-text-color-white">
+              Description:{' '}
+            </span>
+            {overview}
+          </p>
+          <div className='flex gap-2'>
+            {
+              genres.map((genre) => <span key={genre.id} className='bg-secondary-color py-1 px-2 rounded-xl text-sm'>{genre.name}</span>)
+            }
           </div>
         </div>
-      </SectionWrapper>
-    </div>
+      </div>
+    </SectionWrapper>
   );
 };
 
