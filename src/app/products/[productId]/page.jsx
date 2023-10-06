@@ -7,7 +7,7 @@ const page = async ({ params }) => {
   const productId = params.productId;
   const data = await getProductById(productId);
 
-  const { title, release_date, poster_path, backdrop_path, overview } = data;
+  const { title, release_date, poster_path, backdrop_path, overview, vote_average, tagline } = data;
 
   // getting only the year release
   const yearHandler = (date) => {
@@ -24,23 +24,26 @@ const page = async ({ params }) => {
           )}`}</h1>
         </div>
         <div className='mt-8 flex flex-col sm:flex-row justify-center gap-6'>
-          <div className="overflow-hidden rounded-xl w-fit">
+          <div className="overflow-hidden rounded-xl w-full">
             <Image
               alt={title}
               width={500}
               height={282}
               placeholder="blur"
               blurDataURL="/spinner.svg"
-              // style={{
-              //   width: '100%',
-              //   height: '152px',
-              // }}
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'cover'
+              }}
               src={`https://image.tmdb.org/t/p/w500/${
                 poster_path || backdrop_path
               }`}
             />
           </div>
-          <div>
+          <div className='flex flex-col justify-start gap-4'>
+              <h2>{tagline}</h2>
+              <p><span>Rating: </span><span>{vote_average}</span></p>
               <p>{overview}</p>
           </div>
         </div>

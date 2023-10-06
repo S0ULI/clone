@@ -8,7 +8,7 @@ const Card = ({ data }) => {
 
   return (
     <Link
-      href={`/products/${id}`}
+      href={`/products/${id}?=${slug}`}
       className="flex flex-col w-full sm:max-w-[17rem] bg-background-color-c dark:bg-foreground-color  rounded-xl overflow-hidden hover:-translate-y-2 opacity-90 hover:opacity-100 transition-all duration-300"
     >
       <Image
@@ -20,6 +20,7 @@ const Card = ({ data }) => {
         style={{
           maxWidth: '100%',
           height: '152px',
+          objectFit: "cover"
         }}
         src={`https://image.tmdb.org/t/p/w500/${backdrop_path || poster_path}`}
       />
