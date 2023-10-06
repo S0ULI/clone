@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import SectionWrapper from '@/app/components/layout/SectionWrapper';
 import { getProductById } from '../../lib/products-util';
+import RatingProgress from '@/app/components/rating-progress/RatingProgress';
 
 const page = async ({ params }) => {
   const productId = params.productId;
@@ -43,7 +44,7 @@ const page = async ({ params }) => {
           </div>
           <div className='flex flex-col justify-start gap-4'>
               <h2>{tagline}</h2>
-              <p><span>Rating: </span><span>{vote_average}</span></p>
+              <p><span>Rating: {vote_average}</span><span><RatingProgress rating={vote_average}/></span></p>
               <p>{overview}</p>
           </div>
         </div>
