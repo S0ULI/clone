@@ -36,7 +36,7 @@ const page = async ({ params }) => {
           release_date
         )}`}</h1>
       </div>
-      <div className="flex flex-col justify-center items-center gap-6 sm:flex-row sm:items-start mt-8">
+      <div className="flex flex-col justify-center items-center gap-6 sm:flex-row sm:items-start mt-8 mb-8">
         <Image
           alt={title}
           width={500}

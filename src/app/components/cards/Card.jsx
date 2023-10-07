@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import RatingProgress from '../rating-progress/RatingProgress';
 
 const Card = ({ data }) => {
   const { id, title, vote_average, poster_path, backdrop_path, overview } = data;
@@ -28,7 +29,9 @@ const Card = ({ data }) => {
         <h3 className="truncate bg-background-color-p dark:bg-dark-background-color-p text-dark-gray-color dark:text-light-gray-color py-2 px-4 rounded-full w-full">
           {title}
         </h3>
-        <span>{vote_average}</span>
+        <span>
+          <RatingProgress rating={vote_average}/>
+        </span>
         <p className="line-clamp-2 px-1 text-dark-gray-color/70">
           {overview}
         </p>
