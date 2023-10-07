@@ -22,7 +22,7 @@ const Search = () => {
   };
 
   return (
-    <form className="bg-background-color-c rounded-xl flex justify-between items-center gap-2 py-2 px-4" onSubmit={submitHandler}>
+    <form className="bg-background-color-c/10 rounded-xl flex justify-between items-center gap-4 py-2 px-4 mb-4" onSubmit={submitHandler}>
       <input
         type="text"
         placeholder="search ..."
@@ -30,12 +30,12 @@ const Search = () => {
         id="searchInp"
         value={searchValue}
         onChange={onChangeHandler}
-        className="outline-none text-dark-bright-text-color bg-transparent"
+        className="outline-none text-sm text-dark-bright-text-color bg-transparent w-full"
       />
       <button
         disabled={!searchValue}
         type="submit"
-        className="text-2xl dark:text-text-color-white/50 dark:hover:text-text-color-white disabled:text-text-color-dark/30 text-text-color-dark transition-all duration-300"
+        className="text-2xl text-text-color-white disabled:text-text-color-white/50 hover:text-primary-color transition-all duration-300"
       >
         <BiSearch />
       </button>
