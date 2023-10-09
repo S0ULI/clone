@@ -34,8 +34,31 @@ export const getProductById = async (productId) => {
 // fetching products by their name in searchbar
 // fetching products by their name in searchbar
 export const getProductBySearch = async (searchValue) => {
+  if(!searchValue) return [];
+
   const res = await fetch(
     `${productsRoute}/search/movie?api_key=${API_KEY}&query=${searchValue}&include_adult=false`,
+    fetchOptions
+  );
+  if (!res.ok) {
+    throw new Error('something wrong with fetching search page');
+  }
+
+  // Storing Data
+  const data = await res.json();
+
+  return data;
+};
+
+
+// get titles by search keyword
+// get titles by search keyword
+// get titles by search keyword
+export const getTitleBySearch = async (searchValue) => {
+  if(!searchValue) return []
+
+  const res = await fetch(
+    `${productsRoute}/search/keyword?api_key=${API_KEY}&query=${searchValue}&page=1`,
     fetchOptions
   );
   if (!res.ok) {

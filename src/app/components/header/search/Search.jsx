@@ -8,7 +8,7 @@ import { BiSearch } from 'react-icons/bi';
 const Search = () => {
   const [searchValue, setSearchValue] = useState('');
   const router = useRouter()
-
+  
   const onChangeHandler = (event) => {
     setSearchValue(event.target.value);
   };
