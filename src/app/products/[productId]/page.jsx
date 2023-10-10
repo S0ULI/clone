@@ -3,6 +3,7 @@ import Image from 'next/image';
 import SectionWrapper from '@/app/components/layout/SectionWrapper';
 import { getProductById } from '../../lib/products-util';
 import RatingProgress from '@/app/components/rating-progress/RatingProgress';
+import AddToCart from './AddToCart';
 
 const page = async ({ params }) => {
   const productId = params.productId;
@@ -94,6 +95,7 @@ const page = async ({ params }) => {
               </span>
             ))}
           </div>
+          <AddToCart id={productId} data={data} myStyle='mt-6'/>
         </div>
       </div>
     </SectionWrapper>
