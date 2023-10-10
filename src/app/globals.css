@@ -9,3 +9,7 @@ html::-webkit-scrollbar {
 html {
   scrollbar-width: 0;
 }
+
+.scroll-down {
+  transform: translateY(-100%);
+}

@@ -6,7 +6,7 @@ const Loading = () => {
     <>
     <ProgressBar/>
     <div className="w-full h-screen flex justify-center items-center">
-        <Image src='../../public/spinner.svg' alt='loading...' width={75} height={75} style={{width: '75px', height: '75px'}}/>
+        <Image src='/spinner.svg' alt='loading...' width={75} height={75} style={{width: '75px', height: '75px'}}/>
     </div>
     </>
   )
