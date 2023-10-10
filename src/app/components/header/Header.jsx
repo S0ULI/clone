@@ -17,8 +17,9 @@ const Header = () => {
     window.addEventListener('scroll', () => {
       const currentScroll = window.scrollY;
 
-      if (currentScroll <= 0) {
+      if (currentScroll <= 150) {
         setScroll('');
+        return
       }
       if (currentScroll > lastScroll && scroll !== 'scroll-down') {
         setScroll('scroll-down');
