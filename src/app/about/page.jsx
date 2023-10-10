@@ -2,9 +2,9 @@ import SectionWrapper from '../components/layout/SectionWrapper';
 const AboutPage = () => {
   return (
     <SectionWrapper mSt={'flex flex-col gap-6 mt-6'}>
-      <h1 className="text-4xl font-bold text-primary-color">About</h1>
+      <h1 className="text-2xl font-bold text-primary-color">About</h1>
       <article>
-        <p className="text-dark-bright-text-color text-justify text-lg leading-7">
+        <p className="text-dark-bright-text-color text-md leading-7">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec
           iaculis massa. Curabitur luctus accumsan sapien, id porta leo placerat
           sit amet. Pellentesque vestibulum scelerisque libero facilisis
