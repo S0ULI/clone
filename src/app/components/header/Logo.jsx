@@ -6,7 +6,7 @@ import logo from '@/../public/logo.svg';
 const Logo = () => {
   return (
     <Link href="/" className="block h-fit">
-      <Image src={logo} priority={true} alt="Logo" className="w-10" />
+      <Image src={logo} priority={true} alt="Logo" className="w-8" />
     </Link>
   );
 };

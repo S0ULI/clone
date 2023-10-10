@@ -9,7 +9,7 @@ import { BsCart } from 'react-icons/bs';
 const Navbar = () => {
   return (
     <nav className='w-full'>
-      <ul className="flex gap-6 justify-between">
+      <ul className="flex gap-1 sm:gap-6 justify-between">
         <NavItem title="About" link="/about" Icon={LiaInfoCircleSolid} />
         <NavItem title="Products" link="/products" Icon={RiProductHuntLine} />
         <NavItem title="Home" link="/" Icon={BiHomeSmile} />

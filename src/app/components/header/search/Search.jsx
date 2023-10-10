@@ -22,7 +22,7 @@ const Search = () => {
   };
 
   return (
-    <form className="bg-background-color-c/10 rounded-xl flex justify-between items-center gap-4 py-2 px-4 mb-4" onSubmit={submitHandler}>
+    <form className="bg-background-color-c/10 rounded-xl flex justify-between items-center gap-4 py-2 px-4 mb-2" onSubmit={submitHandler}>
       <input
         type="text"
         placeholder="search ..."

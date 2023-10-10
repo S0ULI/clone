@@ -17,7 +17,7 @@ const Header = () => {
     window.addEventListener('scroll', () => {
       const currentScroll = window.scrollY;
 
-      if (currentScroll <= 150) {
+      if (currentScroll <= 120) {
         setScroll('');
         return
       }
@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <header className={`bg-header-bg-color/90 backdrop-blur-md fixed top-0 left-0 w-full z-50 transition-all duration-300 origin-top ${scroll}`}>
-      <SectionWrapper mSt={'py-4 flex flex-col gap-6'} mtn={true}>
+      <SectionWrapper mSt={'py-4 flex flex-col gap-4'} mtn={true}>
         <div className="flex justify-between items-center gap-12">
           <Logo />
           <div className="flex gap-12 w-full sm:w-fit">
