@@ -2,26 +2,12 @@
 
 import {useState, useEffect} from 'react'
 
-const MobileNavBarToggle = ({toggleNav}) => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  useEffect(() => {
-    toggleNav(isOpen)
-  }, [isOpen, toggleNav])
-  
-  const clickHandler = () => {
-    if(!isOpen) {
-      setIsOpen(true)
-    }
-    else {
-      setIsOpen(false)
-    }
-  }
+const MobileNavBarToggle = ({click, toggle}) => {
 
   return (
     <div>
       <svg
-        onClick={clickHandler}
+        onClick={click}
         className="w-10 cursor-pointer"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 10 10"

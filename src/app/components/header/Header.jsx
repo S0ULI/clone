@@ -8,10 +8,25 @@ import Logo from './Logo';
 import Navbar from './Navbar';
 import Search from './search/Search';
 import MobileNavBarToggle from './MobileNavBarToggle';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
   const [scroll, setScroll] = useState('');
   const [toggle, setToggle] = useState();
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setToggle(false)
+  }, [pathname])
+  
+  const clickHandler = () => {
+    if(!toggle) {
+      setToggle(true)
+    }
+    else {
+      setToggle(false)
+    }
+  }
 
   useEffect(() => {
     let lastScroll = Number;
@@ -36,10 +51,6 @@ const Header = () => {
     
   }, [scroll]);
 
-  const toggleNav = (toggleBar) => {
-    setToggle(toggleBar);
-  };
-
   return (
     <header
       className={`bg-header-bg-color/90 backdrop-blur-md fixed top-0 left-0 w-full z-50 transition ease duration-300 origin-top ${
@@ -54,7 +65,7 @@ const Header = () => {
             <DarkModeSwitch />
           </div>
           <div className="block sm:hidden">
-            <MobileNavBarToggle toggleNav={toggleNav} />
+            <MobileNavBarToggle click={clickHandler}  toggle={toggle} />
           </div>
         </div>
         <div className='w-full pt-4 pb-1'>
