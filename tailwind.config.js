@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      transitionProperty: {
+        height: 'height'
+      },
       colors: {
         // primary colors
         'primary-color': '#FF6517', // changed FF6517
