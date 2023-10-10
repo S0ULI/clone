@@ -1,25 +1,11 @@
-'use client'
-
-import { useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import CartContext from '@/app/store/cart-context';
+import AddToCart from '@/app/products/[productId]/AddToCart';
 import RatingProgress from '../rating-progress/RatingProgress';
 
 const Card = ({ data }) => {
   const { id, title, vote_average, poster_path, backdrop_path, overview } = data;
-
-  const cartCtx = useContext(CartContext);
-  const productStatus = cartCtx.ifProductIsInCart(id)
-
-  const toggleCartStatusHandler = () => {
-    if(!productStatus) {
-      cartCtx.addToCart(data)
-    } else {
-      cartCtx.removeFromCart(id)
-    }
-  }
 
   const slug = title.split(' ').join('-').toLowerCase()
 
@@ -54,9 +40,7 @@ const Card = ({ data }) => {
         </p>
       </div>
     </Link>
-      <button onClick={toggleCartStatusHandler} className="hover:bg-shop-button-color bg-secondary-color/80 dark:hover:bg-background-color-c dark:text-text-color-dark  dark:bg-cyan-600  py-4 text-background-color-c rounded-xl transition-all duration-300">
-        {productStatus ? 'Remove from Favorites' : 'Add to Favorites'}
-      </button>
+      <AddToCart id={id} data={data}/>
       </div>
   );
 };
