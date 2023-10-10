@@ -32,6 +32,8 @@ const Header = () => {
 
       lastScroll = currentScroll;
     });
+
+    
   }, [scroll]);
 
   const toggleNav = (toggleBar) => {
@@ -40,11 +42,11 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-header-bg-color/90 backdrop-blur-md fixed top-0 left-0 w-full z-40 transition-all transition-height duration-300 origin-top ${
+      className={`bg-header-bg-color/90 backdrop-blur-md fixed top-0 left-0 w-full z-50 transition ease duration-300 origin-top ${
         !toggle ? scroll : ''
-      } ${toggle ? 'h-screen' : ''}`}
+      }`}
     >
-      <SectionWrapper mSt={'py-4 flex flex-col gap-4'} mtn={true}>
+      <SectionWrapper mSt={'py-4 flex flex-col'} mtn={true}>
         <div className="flex justify-between items-center gap-12">
           <Logo />
           <div className="gap-12 w-fit hidden sm:flex">
@@ -55,8 +57,12 @@ const Header = () => {
             <MobileNavBarToggle toggleNav={toggleNav} />
           </div>
         </div>
+        <div className='w-full pt-4 pb-1'>
         <Search />
-        {toggle ? <Navbar /> : null}
+        </div>
+          <div className={`w-full flex flex-col gap-16 overflow-hidden ${toggle ? 'h-screen' : 'h-0'} transition-height ease duration-300`}>
+            <Navbar />
+          </div>
       </SectionWrapper>
     </header>
   );

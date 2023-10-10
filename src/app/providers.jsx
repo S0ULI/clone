@@ -5,7 +5,7 @@ import styled from 'styled-jsx';
 const Providers = ({ children }) => {
   return (
     <ThemeProvider enableSystem={true} attribute="class">
-      <main className="pt-32 bg-background-color-p dark:bg-dark-background-color-p min-h-screen transition-all duration-300">
+      <main className="pt-36 bg-background-color-p dark:bg-dark-background-color-p min-h-screen transition-all duration-300">
         {children}
       </main>
     </ThemeProvider>

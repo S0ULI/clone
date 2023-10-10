@@ -18,7 +18,7 @@ const Error = ({error, reset}) => {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center gap-8">
         <h1 className="text-primary-color text-2xl">Something Went Wrong</h1>
-        <div className='text-dark-background-color-p/80'>
+        <div className='text-dark-background-color-p/80 dark:text-white/40'>
         <p>Calm Down</p>
         <p>checkout the error below 👇</p>
         </div>
