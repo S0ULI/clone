@@ -1,16 +1,33 @@
+'use client'
+
+import { useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import CartContext from '@/app/store/cart-context';
 import RatingProgress from '../rating-progress/RatingProgress';
 
 const Card = ({ data }) => {
   const { id, title, vote_average, poster_path, backdrop_path, overview } = data;
 
+  const cartCtx = useContext(CartContext);
+  const productStatus = cartCtx.ifProductIsInCart(id)
+
+  const toggleCartStatusHandler = () => {
+    if(!productStatus) {
+      cartCtx.addToCart(data)
+    } else {
+      cartCtx.removeFromCart(id)
+    }
+  }
+
   const slug = title.split(' ').join('-').toLowerCase()
 
   return (
+    <div className='flex flex-col w-full sm:max-w-[17rem] bg-background-color-c dark:bg-foreground-color rounded-xl overflow-hidden hover:-translate-y-2 opacity-90 hover:opacity-100 transition-all duration-300'>
     <Link
       href={`/products/${id}?=${slug}`}
-      className="flex flex-col w-full sm:max-w-[17rem] bg-background-color-c dark:bg-foreground-color  rounded-xl overflow-hidden hover:-translate-y-2 opacity-90 hover:opacity-100 transition-all duration-300"
+      className="flex flex-col"
     >
       <Image
         alt={title ? title : 'Title'}
@@ -36,10 +53,11 @@ const Card = ({ data }) => {
           {overview ? overview : '! There are no Description For this movie yet !'}
         </p>
       </div>
-      <button className="hover:bg-shop-button-color bg-secondary-color/80 dark:hover:bg-background-color-c dark:text-text-color-dark  dark:bg-cyan-600  py-4 text-background-color-c rounded-xl transition-all duration-300">
-        Add to Favorites
-      </button>
     </Link>
+      <button onClick={toggleCartStatusHandler} className="hover:bg-shop-button-color bg-secondary-color/80 dark:hover:bg-background-color-c dark:text-text-color-dark  dark:bg-cyan-600  py-4 text-background-color-c rounded-xl transition-all duration-300">
+        {productStatus ? 'Remove from Favorites' : 'Add to Favorites'}
+      </button>
+      </div>
   );
 };
 
