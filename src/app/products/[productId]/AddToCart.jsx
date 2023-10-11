@@ -1,12 +1,17 @@
 'use client';
 
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 import CartContext from '@/app/store/cart-context';
 
-const AddToCart = ({ id, data, myStyle }) => {
+import Backdrop from '@/app/components/modal/backdrop';
+
+const AddToCart = ({ id, data, myStyle, loged }) => {
+  const [modalShow, setModalShow] = useState(false);
+
   const cartCtx = useContext(CartContext);
   const productStatus = cartCtx.ifProductIsInCart(+id);
+
   const toggleCartStatusHandler = () => {
     if (!productStatus) {
       cartCtx.addToCart(data);
@@ -16,13 +21,24 @@ const AddToCart = ({ id, data, myStyle }) => {
     }
   };
 
+  
+  const modalHandler = () => {
+    setModalShow(true)
+  }
+  const cancelHandler = () => {
+    setModalShow(false)
+  }
+
   return (
+    <>
     <button
-      onClick={toggleCartStatusHandler}
-      className={`hover:bg-shop-button-color bg-secondary-color/80 dark:hover:bg-background-color-c dark:text-text-color-dark  dark:bg-cyan-600  py-4 text-background-color-c rounded-xl transition-all duration-300 ${myStyle}`}
+      onClick={loged ? toggleCartStatusHandler : modalHandler}
+      className={`hover:bg-shop-button-color bg-secondary-color/80 dark:hover:bg-background-color-c dark:text-text-color-dark dark:bg-cyan-600  py-4 text-background-color-c rounded-xl transition-all duration-300 ${myStyle}`}
     >
       {productStatus ? 'Remove from Favorites' : 'Add to Favorites'}
     </button>
+    {!loged && modalShow && <Backdrop cancelHandler={cancelHandler}/>}
+    </>
   );
 };
 

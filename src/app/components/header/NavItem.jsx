@@ -11,7 +11,7 @@ const NavItem = ({ title, link, Icon, badge }) => {
         <div
           className={`flex items-center gap-4 sm:gap-1 w-full ${badge ? 'justify-between' : ''}`}>
           <div className='flex gap-4'>
-            <span>{title}</span>
+            <span className='whitespace-nowrap'>{title}</span>
             <span className="block sm:hidden text-3xl">
               <Icon />
             </span>

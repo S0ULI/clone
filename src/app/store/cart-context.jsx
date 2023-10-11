@@ -6,6 +6,7 @@ const CartContext = createContext({
   addToCart: (productData) => {},
   removeFromCart: (productId) => {},
   ifProductIsInCart: (productId) => {},
+  clearCart: () => {}
 });
 
 export const CartContextProvider = ({ children }) => {
@@ -21,6 +22,10 @@ export const CartContextProvider = ({ children }) => {
     )
   }
 
+  const clearCartHandler = () => {
+    setUserCart([]);
+  }
+
   const ifProductIsInCartHandler = (productId) => 
     userCart.some((product) => product.id === productId);
   
@@ -30,6 +35,7 @@ export const CartContextProvider = ({ children }) => {
     addToCart: addToCartHandler,
     removeFromCart: removeFromCartHandler,
     ifProductIsInCart: ifProductIsInCartHandler,
+    clearCart: clearCartHandler
   };
 
   return (

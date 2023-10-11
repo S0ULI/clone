@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 
+import CartContext from '@/app/store/cart-context';
 import SectionWrapper from '../layout/SectionWrapper';
 import DarkModeSwitch from './DarkModeSwitch';
 import Logo from './Logo';
@@ -10,9 +11,12 @@ import Search from './search/Search';
 import MobileNavBarToggle from './MobileNavBarToggle';
 import { usePathname } from 'next/navigation';
 
-const Header = () => {
+const Header = ({loged}) => {
   const [scroll, setScroll] = useState('');
   const [toggle, setToggle] = useState();
+  const cartCtx = useContext(CartContext);
+  const cartBadge = cartCtx.totalProducts;
+
   const pathname = usePathname()
 
   useEffect(() => {
@@ -53,7 +57,7 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-header-bg-color/90 backdrop-blur-md fixed top-0 left-0 w-full z-50 transition ease duration-300 origin-top ${
+      className={`bg-header-bg-color/90 backdrop-blur-md fixed top-0 left-0 w-full z-[99] transition ease duration-300 origin-top ${
         !toggle ? scroll : ''
       }`}
     >
@@ -61,7 +65,7 @@ const Header = () => {
         <div className="flex justify-between items-center gap-12">
           <Logo />
           <div className="gap-12 w-fit hidden sm:flex">
-            <Navbar />
+            <Navbar loged={loged} cartBadge={cartBadge} />
             <DarkModeSwitch />
           </div>
           <div className="block sm:hidden">
@@ -72,7 +76,7 @@ const Header = () => {
         <Search />
         </div>
           <div className={`w-full flex flex-col gap-16 overflow-hidden ${toggle ? 'h-screen' : 'h-0'} transition-height ease duration-300`}>
-            <Navbar />
+            <Navbar loged={loged} cartBadge={cartBadge} />
           </div>
       </SectionWrapper>
     </header>

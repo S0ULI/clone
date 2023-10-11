@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import {auth} from '@clerk/nextjs'
 
 import AddToCart from '@/app/products/[productId]/AddToCart';
 import RatingProgress from '../rating-progress/RatingProgress';
@@ -9,8 +10,14 @@ const Card = ({ data }) => {
 
   const slug = title.split(' ').join('-').toLowerCase()
 
+  const {userId} = auth();
+  let loged = false;
+  if(userId){
+    loged = true
+  }
+
   return (
-    <div className='flex flex-col w-full sm:max-w-[17rem] bg-background-color-c dark:bg-foreground-color rounded-xl overflow-hidden hover:-translate-y-2 opacity-90 hover:opacity-100 transition-all duration-300'>
+    <div className='flex flex-col w-full sm:max-w-[17rem] group bg-background-color-c dark:bg-foreground-color rounded-xl overflow-hidden'>
     <Link
       href={`/products/${id}?=${slug}`}
       className="flex flex-col"
@@ -21,11 +28,7 @@ const Card = ({ data }) => {
         height={282}
         placeholder="blur"
         blurDataURL="/spinner.svg"
-        style={{
-          maxWidth: '100%',
-          height: '152px',
-          objectFit: "cover"
-        }}
+        className='max-w-full h-[152px] object-cover scale-100 grayscale group-hover:grayscale-0 transition-filter duration-300'
         src={backdrop_path || poster_path ? `https://image.tmdb.org/t/p/w500/${backdrop_path || poster_path}` : '/logo.svg' }
       />
       <div className="flex flex-col items-center text-center gap-4 p-4">
@@ -40,7 +43,7 @@ const Card = ({ data }) => {
         </p>
       </div>
     </Link>
-      <AddToCart id={id} data={data}/>
+      <AddToCart id={id} data={data} loged={loged}/>
       </div>
   );
 };

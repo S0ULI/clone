@@ -4,10 +4,16 @@ import SectionWrapper from '@/app/components/layout/SectionWrapper';
 import { getProductById } from '../../lib/products-util';
 import RatingProgress from '@/app/components/rating-progress/RatingProgress';
 import AddToCart from './AddToCart';
+import { auth } from '@clerk/nextjs';
 
 const page = async ({ params }) => {
   const productId = params.productId;
   const data = await getProductById(productId);
+  const {userId} = auth();
+  let loged = false;
+  if(userId){
+    loged = true
+  }
 
   const {
     title,
@@ -95,7 +101,7 @@ const page = async ({ params }) => {
               </span>
             ))}
           </div>
-          <AddToCart id={productId} data={data} myStyle='mt-6'/>
+          <AddToCart id={productId} data={data} loged={loged} myStyle='mt-6'/>
         </div>
       </div>
     </SectionWrapper>
