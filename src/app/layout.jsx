@@ -1,6 +1,7 @@
 import localFont from 'next/font/local';
 import Providers from './providers';
 import Header from './components/header/Header';
+import { ClerkProvider } from '@clerk/nextjs';
 
 import './globals.css';
 
@@ -36,13 +37,15 @@ export const metadata = {
 // JSX Function
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={poppins.className}>
-        <Providers>
-          <Header />
-          {children}
-        </Providers>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={poppins.className}>
+          <Providers>
+            <Header />
+            {children}
+          </Providers>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
