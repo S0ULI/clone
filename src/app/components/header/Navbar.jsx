@@ -20,7 +20,7 @@ const Navbar = () => {
         <NavItem title="Cart" link="/cart" Icon={BsArrowRight} badge={cartItems}/>
       </ul>
     </nav>
-    <div className='flex justify-start sm:hidden w-full'>
+    <div className='flex justify-start sm:hidden w-full ml-4'>
       <DarkModeSwitch/>
     </div>
     </>
