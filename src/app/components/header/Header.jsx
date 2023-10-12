@@ -11,7 +11,7 @@ import Search from './search/Search';
 import MobileNavBarToggle from './MobileNavBarToggle';
 import { usePathname } from 'next/navigation';
 
-const Header = ({loged}) => {
+const Header = () => {
   const [scroll, setScroll] = useState('');
   const [toggle, setToggle] = useState();
   const cartCtx = useContext(CartContext);
@@ -65,7 +65,7 @@ const Header = ({loged}) => {
         <div className="flex justify-between items-center gap-12">
           <Logo />
           <div className="gap-12 w-fit hidden sm:flex">
-            <Navbar loged={loged} cartBadge={cartBadge} />
+            <Navbar cartBadge={cartBadge} />
             <DarkModeSwitch />
           </div>
           <div className="block sm:hidden">
@@ -76,7 +76,7 @@ const Header = ({loged}) => {
         <Search />
         </div>
           <div className={`w-full flex flex-col gap-16 overflow-hidden ${toggle ? 'h-screen' : 'h-0'} transition-height ease duration-300`}>
-            <Navbar loged={loged} cartBadge={cartBadge} />
+            <Navbar cartBadge={cartBadge} />
           </div>
       </SectionWrapper>
     </header>

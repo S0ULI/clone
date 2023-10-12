@@ -62,3 +62,7 @@ html {
 .open .line-menu.end {
   transform: rotate(-90deg) translateX(-3px);
 }
+
+.cl-internal-bstd8c{
+  display: none !important;
+}

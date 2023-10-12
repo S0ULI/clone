@@ -1,10 +1,14 @@
+'use client'
+
 import { UserButton } from '@clerk/nextjs';
+import { useAuth } from '@clerk/nextjs';
 
 import { BsArrowRight } from 'react-icons/bs';
 import NavItem from './NavItem';
 import DarkModeSwitch from './DarkModeSwitch';
 
-const Navbar = ({ cartBadge, loged }) => {
+const Navbar = ({ cartBadge }) => {
+  const { isLoaded, userId } = useAuth()
   return (
     <>
       <nav className="w-full">
@@ -12,7 +16,7 @@ const Navbar = ({ cartBadge, loged }) => {
           <NavItem title="About" link="/about" Icon={BsArrowRight} />
           <NavItem title="Products" link="/products" Icon={BsArrowRight} />
           <NavItem title="Home" link="/" Icon={BsArrowRight} />
-          {loged ? (
+          { userId && isLoaded ? (
             <>
               <NavItem
                 title="Cart"
@@ -27,11 +31,20 @@ const Navbar = ({ cartBadge, loged }) => {
           )}
         </ul>
       </nav>
-      {loged ? (
+      {userId && isLoaded && (
         <div className="flex justify-center items-center">
-          <UserButton />
+          <UserButton afterSignOutUrl='/' userProfileMode='navigation' userProfileUrl='/profile' 
+              appearance={{
+                variables: {
+                  borderRadius: '0.75rem',
+                  colorBackground: '#1f1f1f',
+                  colorDanger: '#ff0000',
+                  colorText: '#f1f1f1',
+                  colorPrimary: '#FF6517',
+                }
+              }} />
         </div>
-      ) : null}
+      )}
       <div className="flex justify-start sm:hidden w-full ml-4">
         <DarkModeSwitch />
       </div>

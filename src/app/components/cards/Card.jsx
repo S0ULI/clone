@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {auth} from '@clerk/nextjs'
 
 import AddToCart from '@/app/products/[productId]/AddToCart';
 import RatingProgress from '../rating-progress/RatingProgress';
@@ -9,12 +8,6 @@ const Card = ({ data }) => {
   const { id, title, vote_average, poster_path, backdrop_path, overview } = data;
 
   const slug = title.split(' ').join('-').toLowerCase()
-
-  const {userId} = auth();
-  let loged = false;
-  if(userId){
-    loged = true
-  }
 
   return (
     <div className='flex flex-col w-full sm:max-w-[17rem] group bg-background-color-c dark:bg-foreground-color rounded-xl overflow-hidden'>
@@ -28,7 +21,7 @@ const Card = ({ data }) => {
         height={282}
         placeholder="blur"
         blurDataURL="/spinner.svg"
-        className='max-w-full h-[152px] object-cover scale-100 grayscale group-hover:grayscale-0 transition-filter duration-300'
+        className='max-w-full h-60 object-cover grayscale group-hover:grayscale-0 transition-filter duration-300'
         src={backdrop_path || poster_path ? `https://image.tmdb.org/t/p/w500/${backdrop_path || poster_path}` : '/logo.svg' }
       />
       <div className="flex flex-col items-center text-center gap-4 p-4">
@@ -43,7 +36,7 @@ const Card = ({ data }) => {
         </p>
       </div>
     </Link>
-      <AddToCart id={id} data={data} loged={loged}/>
+      <AddToCart id={id} data={data}/>
       </div>
   );
 };

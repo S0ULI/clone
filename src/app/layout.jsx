@@ -2,7 +2,7 @@ import localFont from 'next/font/local';
 import Providers from './providers';
 import Header from './components/header/Header';
 import { ClerkProvider } from '@clerk/nextjs';
-import {auth} from '@clerk/nextjs'
+import { dark } from '@clerk/themes';
 
 import './globals.css';
 
@@ -37,17 +37,14 @@ export const metadata = {
 
 // JSX Function
 export default function RootLayout({ children }) {
-  const {userId} = auth();
-  let loged = false
-  if(userId) {
-    loged = true
-  }
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{
+      baseTheme: dark,
+    }}>
       <html lang="en" suppressHydrationWarning>
         <body className={poppins.className + ' z-0'}>
           <Providers>
-            <Header loged={loged} />
+            <Header />
             {children}
           </Providers>
         </body>
