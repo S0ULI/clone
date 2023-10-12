@@ -5,7 +5,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 import { dark } from '@clerk/themes';
 
 import './globals.css';
-import Footer from './components/footer/footer';
+import Footer from './components/footer/Footer';
 
 // adding Font
 const poppins = localFont({
