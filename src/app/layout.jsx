@@ -5,6 +5,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 import { dark } from '@clerk/themes';
 
 import './globals.css';
+import Footer from './components/footer/footer';
 
 // adding Font
 const poppins = localFont({
@@ -46,6 +47,7 @@ export default function RootLayout({ children }) {
           <Providers>
             <Header />
             {children}
+            <Footer/>
           </Providers>
         </body>
       </html>
