@@ -64,7 +64,7 @@ const Header = () => {
       <SectionWrapper mSt={'py-4 flex flex-col'} mtn={true}>
         <div className="flex justify-between items-center gap-12">
           <Logo />
-          <div className="gap-12 w-fit hidden sm:flex">
+          <div className="gap-6 w-fit hidden sm:flex">
             <Navbar cartBadge={cartBadge} />
             <DarkModeSwitch />
           </div>
@@ -75,7 +75,7 @@ const Header = () => {
         <div className='w-full pt-4 pb-1'>
         <Search />
         </div>
-          <div className={`w-full flex flex-col gap-16 overflow-hidden ${toggle ? 'h-screen' : 'h-0'} transition-height ease duration-300`}>
+          <div className={`w-full flex flex-col gap-8 overflow-hidden ${toggle ? 'h-screen' : 'h-0'} transition-height ease duration-300`}>
             <Navbar cartBadge={cartBadge} />
           </div>
       </SectionWrapper>

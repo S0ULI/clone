@@ -12,7 +12,7 @@ const Navbar = ({ cartBadge }) => {
   return (
     <>
       <nav className="w-full">
-        <ul className="flex flex-col sm:flex-row gap-2 sm:gap-6 text-lg sm:text-sm justify-between">
+        <ul className="flex flex-col sm:flex-row sm:gap-6 text-lg sm:text-sm justify-between">
           <NavItem title="About" link="/about" Icon={BsArrowRight} />
           <NavItem title="Products" link="/products" Icon={BsArrowRight} />
           <NavItem title="Home" link="/" Icon={BsArrowRight} />
@@ -31,8 +31,9 @@ const Navbar = ({ cartBadge }) => {
           )}
         </ul>
       </nav>
+      <div className='flex justify-between items-center w-full px-3'>
       {userId && isLoaded && (
-        <div className="flex justify-center items-center">
+        <div>
           <UserButton afterSignOutUrl='/' userProfileMode='navigation' userProfileUrl='/profile' 
               appearance={{
                 variables: {
@@ -41,12 +42,16 @@ const Navbar = ({ cartBadge }) => {
                   colorDanger: '#ff0000',
                   colorText: '#f1f1f1',
                   colorPrimary: '#FF6517',
+                },
+                elements: {
+                  avatarBox: 'w-12 h-12 sm:w-7 sm:h-7'
                 }
               }} />
         </div>
       )}
-      <div className="flex justify-start sm:hidden w-full ml-4">
+      <div className="sm:hidden">
         <DarkModeSwitch />
+      </div>
       </div>
     </>
   );

@@ -16,8 +16,8 @@ const ProfilePage = () => {
           borderRadius: '0.75rem'
         },
         elements : {
-          rootBox: 'w-full',
-          card: 'p-0 m-0 w-full',
+          rootBox: 'w-full !p-0 !m-0',
+          card: '!p-0 !m-0 w-full',
           scrollBox: 'max-w-[740px]'
         }
         }}/>

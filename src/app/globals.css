@@ -66,3 +66,6 @@ html {
 .cl-internal-bstd8c{
   display: none !important;
 }
+.cl-userButtonPopoverFooter{
+  display: none !important;
+}
