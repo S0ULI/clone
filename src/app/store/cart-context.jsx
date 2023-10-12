@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 const CartContext = createContext({
   products: [],
@@ -10,7 +10,17 @@ const CartContext = createContext({
 });
 
 export const CartContextProvider = ({ children }) => {
-  const [userCart, setUserCart] = useState([]);
+  const storage = localStorage.getItem('userCart');
+  let initCart = []
+  if(storage) {
+    initCart = JSON.parse(storage);
+  }
+  const [userCart, setUserCart] = useState(initCart);
+
+  
+  useEffect(() => {
+    localStorage.setItem('userCart', JSON.stringify(userCart))
+  }, [userCart])
 
   const addToCartHandler = (product) => {
     setUserCart((prevUserCart) => prevUserCart.concat(product));

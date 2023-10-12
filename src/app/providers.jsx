@@ -8,8 +8,10 @@ const Providers = ({ children }) => {
   return (
     <ThemeProvider enableSystem={true} attribute="class">
       <CartContextProvider>
-        <main className="pt-36 bg-background-color-p dark:bg-dark-background-color-p min-h-screen transition-all duration-300">
-          {children}
+        <main className="bg-background-color-p dark:bg-dark-background-color-p">
+          <div className='pt-36 min-h-screen w-full flex flex-col'>
+            {children}
+          </div>
         </main>
       </CartContextProvider>
     </ThemeProvider>

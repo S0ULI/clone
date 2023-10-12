@@ -10,7 +10,7 @@ const SignInPage = () => {
             variables: {
               borderRadius: '0.75rem',
               colorInputBackground: '#EAD8BF',
-              colorInputText: '#1f1f1f',
+              colorInputText: '#cccccc',
               colorPrimary: '#FF6517',
               colorText: '#f1f1f1',
               colorDanger: '#FF0000',

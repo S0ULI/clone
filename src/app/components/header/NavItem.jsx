@@ -17,7 +17,7 @@ const NavItem = ({ title, link, Icon, badge }) => {
             </span>
           </div>
           {badge ? (
-            <span className="sm:text-xs text-md bg-dark-background-color-p text-nav-list-color-hover rounded-full block w-10 h-10 sm:w-6 sm:h-6 text-center self-end">
+            <span className="sm:text-xs sm:leading-6 text-md bg-dark-background-color-p text-nav-list-color-hover rounded-full block w-10 h-10 sm:w-6 sm:h-6 text-center self-end">
               {badge}
             </span>
           ) : null}
