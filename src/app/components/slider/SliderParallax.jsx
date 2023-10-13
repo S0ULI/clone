@@ -43,11 +43,11 @@ const SliderParallax = () => {
         keyboard={{
           enabled: true,
         }}
-        // autoplay={{
-        //   delay: 5000,
-        //   disableOnInteraction: false,
-        // }}
-        modules={[Pagination, Navigation, Parallax, Keyboard]}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        modules={[Pagination, Navigation, Parallax, Keyboard, Autoplay]}
         className="w-full"
       >
         {sugg.map((item) => {

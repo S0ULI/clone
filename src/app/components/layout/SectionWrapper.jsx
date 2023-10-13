@@ -1,7 +1,7 @@
-const SectionWrapper = ({ mSt, mtn, children }) => {
+const SectionWrapper = ({ mSt, mtn, px8, children }) => {
 
   return (
-    <section className={`${mSt} ${mtn || 'mt-8'} max-w-7xl m-auto px-8 w-full`}>
+    <section className={`${mSt} ${mtn || 'mt-8'} ${px8 || 'px-8'} max-w-7xl m-auto w-full`}>
       {children}
     </section>
   );

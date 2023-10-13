@@ -13,7 +13,7 @@ const Card = ({ data }) => {
   }
 
   return (
-    <div className='flex flex-col w-full sm:max-w-[17rem] group bg-background-color-c dark:bg-foreground-color rounded-xl overflow-hidden'>
+    <div className='flex flex-col w-[17rem] group bg-background-color-c dark:bg-foreground-color rounded-xl overflow-hidden select-none'>
     <Link
       href={`/products/${id}?=${slug}`}
       className="flex flex-col"
