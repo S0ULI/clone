@@ -32,8 +32,11 @@ const page = async ({ params }) => {
 
   // getting only the year release
   const yearHandler = (date) => {
-    const newDate = date.split('-');
-    return `(${newDate[0]})`;
+    if(date){
+      const newDate = date.split('-');
+      return `(${newDate[0]})`;
+    }
+    else return
   };
 
   return (

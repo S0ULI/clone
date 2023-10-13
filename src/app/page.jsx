@@ -1,9 +1,9 @@
-import SectionWrapper from './components/layout/SectionWrapper';
+import SliderParallax from './components/slider/SliderParallax';
 
 export default function Home() {
   return (
-    <SectionWrapper>
-      <h1>hello</h1>
-    </SectionWrapper>
+    <div className='w-full'>
+      <SliderParallax/>
+    </div>
   );
 }

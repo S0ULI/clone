@@ -7,7 +7,10 @@ import RatingProgress from '../rating-progress/RatingProgress';
 const Card = ({ data }) => {
   const { id, title, vote_average, poster_path, backdrop_path, overview } = data;
 
-  const slug = title.split(' ').join('-').toLowerCase()
+  let slug = '';
+  if(title) {
+    slug = title.split(' ').join('-').toLowerCase()
+  }
 
   return (
     <div className='flex flex-col w-full sm:max-w-[17rem] group bg-background-color-c dark:bg-foreground-color rounded-xl overflow-hidden'>

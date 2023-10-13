@@ -10,11 +10,11 @@ const CartContext = createContext({
 });
 
 export const CartContextProvider = ({ children }) => {
-  const storage = localStorage.getItem('userCart');
+  // const storage = localStorage.getItem('userCart');
   let initCart = []
-  if(storage) {
-    initCart = JSON.parse(storage);
-  }
+  // if(storage) {
+  //   initCart = JSON.parse(storage);
+  // }
   const [userCart, setUserCart] = useState(initCart);
 
   
