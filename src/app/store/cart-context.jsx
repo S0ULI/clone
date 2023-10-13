@@ -10,12 +10,11 @@ const CartContext = createContext({
 });
 
 export const CartContextProvider = ({ children }) => {
-  // const storage = localStorage.getItem('userCart');
-  let initCart = []
-  // if(storage) {
-  //   initCart = JSON.parse(storage);
-  // }
-  const [userCart, setUserCart] = useState(initCart);
+  const getInitState = () => {
+    const userCartOnStorage = localStorage.getItem('userCart');
+    return userCartOnStorage ? JSON.parse(userCartOnStorage) : []
+  }
+  const [userCart, setUserCart] = useState(getInitState);
 
   
   useEffect(() => {
