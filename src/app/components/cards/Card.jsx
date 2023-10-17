@@ -5,12 +5,7 @@ import AddToCart from '@/app/products/[productId]/AddToCart';
 import RatingProgress from '../rating-progress/RatingProgress';
 
 const Card = ({ data }) => {
-  const { id, title, vote_average, poster_path, backdrop_path, overview } = data;
-
-  let slug = '';
-  if(title) {
-    slug = title.split(' ').join('-').toLowerCase()
-  }
+  const { id, title, slug, rate, image, description } = data;
 
   return (
     <div className='flex flex-col w-[17rem] group bg-background-color-c dark:bg-foreground-color rounded-xl overflow-hidden select-none'>
@@ -25,17 +20,17 @@ const Card = ({ data }) => {
         placeholder="blur"
         blurDataURL="/spinner.svg"
         className='max-w-full h-60 object-cover grayscale group-hover:grayscale-0 transition-filter duration-300'
-        src={backdrop_path || poster_path ? `https://image.tmdb.org/t/p/w500/${backdrop_path || poster_path}` : '/logo.svg' }
+        src={image || '/logo.svg'}
       />
       <div className="flex flex-col items-center text-center gap-4 p-4">
         <h3 className="truncate bg-background-color-p dark:bg-dark-background-color-p text-dark-gray-color dark:text-light-gray-color py-2 px-4 rounded-full w-full">
-          {title ? title : 'No Title'}
+          {title || 'No Title'}
         </h3>
         <span>
-          <RatingProgress rating={vote_average ? vote_average : 0}/>
+          <RatingProgress rating={rate || 0}/>
         </span>
         <p className="line-clamp-2 px-1 text-dark-gray-color/70">
-          {overview ? overview : '! There are no Description For this movie yet !'}
+          {description ? description : '! There are no Description For this movie yet !'}
         </p>
       </div>
     </Link>

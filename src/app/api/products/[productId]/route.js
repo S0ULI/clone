@@ -11,7 +11,6 @@ export const GET = async (req, { params }) => {
     const { productId } = params;
 
     const product = await getProductById(productId);
-    console.log(params);
 
     if (!product) {
       return NextResponse.json(

@@ -37,9 +37,12 @@ export const createProduct = async (ProductData) => {
 // Read
 
 // Get All Products
-export const getAllProducts = async () => {
+export const getAllProducts = async (category) => {
+  if(category === 'all') {
+    category = null
+  }
   const res = await fetch(
-    `${domain}/api/products`,
+    `${domain}/api/products?category=${category || ''}`,
     { next: { revalidate: 60 * 60 * 6 } },
     getOptions
   );
@@ -119,7 +122,6 @@ export const updateProduct = async (productId, productData) => {
   return data;
 };
 
-
 // Delete
 //===== Delete
 // Delete
@@ -130,7 +132,7 @@ const deleteProduct = async (productId) => {
     headers: {
       'Content-Type': 'application/json',
     },
-  })
+  });
 
   if (!res.ok) {
     throw new Error('something wrong with deleting produt in post');
@@ -139,4 +141,4 @@ const deleteProduct = async (productId) => {
   const data = await res.json();
 
   return data;
-}
+};

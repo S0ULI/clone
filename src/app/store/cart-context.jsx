@@ -20,13 +20,10 @@ export const CartContextProvider = ({ children }) => {
   
   useEffect(() => {
     localStorage.setItem('userCart', JSON.stringify(userCart))
-    // fetch('/api/cart', )
-
   }, [userCart])
 
   const addToCartHandler = (product) => {
     setUserCart((prevUserCart) => prevUserCart.concat(product));
-    fetch()
   };
 
   const removeFromCartHandler = (productId) => {

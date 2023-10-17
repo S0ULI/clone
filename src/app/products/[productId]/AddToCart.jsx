@@ -12,14 +12,14 @@ const AddToCart = ({ id, data, myStyle }) => {
   const [modalShow, setModalShow] = useState(false);
 
   const cartCtx = useContext(CartContext);
-  const productStatus = cartCtx.ifProductIsInCart(+id);
+  const productStatus = cartCtx.ifProductIsInCart(id);
 
   const toggleCartStatusHandler = () => {
     if (!productStatus) {
       cartCtx.addToCart(data);
 
     } else {
-      cartCtx.removeFromCart(+id);
+      cartCtx.removeFromCart(id);
     }
   };
 

@@ -1,14 +1,15 @@
 import Image from 'next/image';
 
 import SectionWrapper from '@/app/components/layout/SectionWrapper';
-import { getProductById } from '../../lib/products-util';
 import RatingProgress from '@/app/components/rating-progress/RatingProgress';
 import AddToCart from './AddToCart';
 import { auth } from '@clerk/nextjs';
+import { getProductById } from '@/app/lib/products-utils';
+import Link from 'next/link';
 
 const page = async ({ params }) => {
   const productId = params.productId;
-  const data = await getProductById(productId);
+  const data = await getProductById(productId)
   const {userId} = auth();
   let loged = false;
   if(userId){
@@ -17,34 +18,19 @@ const page = async ({ params }) => {
 
   const {
     title,
-    release_date,
-    poster_path,
-    backdrop_path,
-    overview,
-    vote_average,
-    tagline,
-    genres,
-    budget,
-    revenue,
-    original_language,
-    original_title
+    image,
+    description,
+    rate,
+    category,
+    price
   } = data;
 
-  // getting only the year release
-  const yearHandler = (date) => {
-    if(date){
-      const newDate = date.split('-');
-      return `(${newDate[0]})`;
-    }
-    else return
-  };
+  const categories = category.split(' ');
 
   return (
     <SectionWrapper mSt="flex flex-col h-full sm:h-screen">
       <div className="flex justify-center bg-background-color-c dark:bg-black/90 w-full p-4 rounded-xl">
-        <h1 className="py-2 px-6 truncate rounded-lg text-text-color-dark bg-background-color-p dark:text-dark-nav-list-color-hover dark:bg-dark-background-color-p">{`${title} ${yearHandler(
-          release_date
-        )}`}</h1>
+        <h1 className="py-2 px-6 truncate rounded-lg text-text-color-dark bg-background-color-p dark:text-dark-nav-list-color-hover dark:bg-dark-background-color-p">{title}</h1>
       </div>
       <div className="flex flex-col justify-center items-center gap-6 sm:flex-row sm:items-start mt-8 mb-8">
         <Image
@@ -60,48 +46,32 @@ const page = async ({ params }) => {
             objectFit: 'cover',
             borderRadius: '0.75rem',
           }}
-          src={`https://image.tmdb.org/t/p/w500/${
-            poster_path || backdrop_path
-          }`}
+          src={image}
         />
         <div className="flex flex-col gap-4 w-full sm:min-w-[250px] max-w-lg">
-          <h2 className="text-xl">{`" ${original_title}: ${tagline || `This is ${title}`} "`}</h2>
           <div className="flex gap-4">
             <span>
-              <RatingProgress rating={vote_average} />
+              <RatingProgress rating={rate} />
             </span>
-            <span>{vote_average}</span>
+            <span>{rate}</span>
           </div>
           <p className="text-dark-nav-list-color flex flex-col gap-1">
             <span className="dark:text-light-gray-color text-strong-text-color">
               Description: 
             </span>
-            {overview}
+            {description}
           </p>
           <div className="flex flex-col gap-1 text-sm dark:text-light-gray-color text-strong-text-color">
-            <div>
-              <span>Budget: </span>
-              <span className="text-dark-nav-list-color">{budget}</span>
-            </div>
-            <div>
-              <span>Revenue: </span>
-              <span className="text-dark-nav-list-color">{revenue}</span>
-            </div>
-            <div>
-              <span>Original Language: </span>
-              <span className="text-dark-nav-list-color">
-                {original_language}
-              </span>
-            </div>
           </div>
           <div className="flex gap-2">
-            {genres.map((genre) => (
-              <span
-                key={genre.id}
+            {categories.map((cat, index) => (
+              <Link
+                key={index}
                 className="bg-secondary-color py-1 px-2 rounded-xl text-sm"
+                href={'/products?category=' + cat}
               >
-                {genre.name}
-              </span>
+                {cat}
+              </Link>
             ))}
           </div>
           <AddToCart id={productId} data={data} loged={loged} myStyle='mt-6'/>

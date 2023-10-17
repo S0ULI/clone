@@ -25,6 +25,7 @@ export const GET = async (req) => {
     const { searchParams } = new URL(req.url)
     const category = searchParams.get('category')
     const searchTerm = searchParams.get('searchTerm')
+    console.log(category);
 
     if(category){
         try {
