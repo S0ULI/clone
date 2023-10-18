@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 import { BiSearch } from 'react-icons/bi';
 import { getProductsBySearch } from '@/app/lib/products-utils';
@@ -12,6 +12,7 @@ const Search = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [showSearchPop, setShowSearchPop] = useState(false);
   const [searchLoadign, setSearchLoading] = useState(true);
+  const pathname = usePathname();
   const router = useRouter();
 
   const getApiData = async () => {
@@ -22,6 +23,10 @@ const Search = () => {
   };
 
   useEffect(() => {
+    setSearchValue('')
+  }, [pathname])
+
+  useEffect(() => {
     if (searchValue.length > 3) {
       getApiData();
       setShowSearchPop(true);
@@ -29,8 +34,6 @@ const Search = () => {
       setShowSearchPop(false);
     }
   }, [searchValue]);
-
-  console.log(searchResults);
 
   const onChangeHandler = (event) => {
     setSearchValue(event.target.value);
