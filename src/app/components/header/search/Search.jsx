@@ -6,11 +6,13 @@ import { useRouter, usePathname } from 'next/navigation';
 import { BiSearch } from 'react-icons/bi';
 import { getProductsBySearch } from '@/app/lib/products-utils';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [showSearchPop, setShowSearchPop] = useState(false);
+  // const [showSearchPopOnFocous, setShowSearchPopOnFocous] = useState(false);
   const [searchLoadign, setSearchLoading] = useState(true);
   const pathname = usePathname();
   const router = useRouter();
@@ -34,6 +36,15 @@ const Search = () => {
       setShowSearchPop(false);
     }
   }, [searchValue]);
+
+  const onFocousHandler = (e) => {
+    if(searchValue.length > 3){
+      setShowSearchPop(true)
+    }
+  }
+  const onBlurHandler = (e) => {
+    setShowSearchPop(false)
+  }
 
   const onChangeHandler = (event) => {
     setSearchValue(event.target.value);
@@ -63,6 +74,8 @@ const Search = () => {
           value={searchValue}
           onChange={onChangeHandler}
           className="outline-none text-sm text-dark-bright-text-color bg-transparent w-full"
+          onFocus={onFocousHandler}
+          onBlur={onBlurHandler}
         />
         <button
           disabled={!searchValue}
@@ -89,9 +102,10 @@ const Search = () => {
                   <div key={product.id} className="w-full">
                     <Link
                       href={`/products/${product.id}`}
-                      className="w-full py-2 rounded-xl hover:bg-[#4d4d4d] block transition-colors duration-100 px-4"
+                      className="w-full py-3 rounded-xl hover:bg-[#4d4d4d] transition-colors duration-100 px-4 flex justify-between items-center"
                     >
-                      {product.title}
+                      <span>{product.title}</span>
+                      <div className='w-20 h-20 overflow-hidden rounded-xl'><Image src={product.image} alt='...' width={75} height={75} className='object-cover w-full block' /></div>
                     </Link>
                   </div>
                 );
