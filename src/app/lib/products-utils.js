@@ -1,7 +1,6 @@
 // deffinning Domain and Fetch Options
 
-// const domain = 'http://localhost:3000';
-const domain = 'https://clone-flame-nine.vercel.app';
+const domain = process.env.NEXT_PUBLIC_DOMAIN
 
 const getOptions = {
   method: 'GET',
