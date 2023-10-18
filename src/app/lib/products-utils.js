@@ -70,13 +70,11 @@ export const getProductById = async (productId) => {
 };
 
 // Get Product By Title
-export const getProductByTitle = async (productTitle) => {
-  const res = await fetch(
-    `${domain}/api/products?title=${productTitle}`,
-    getOptions
-  );
+export const getProductsBySearch = async (searchTerm) => {
+  // if(!searchTerm) return
+  const res = await fetch(`${domain}/api/search/${searchTerm}`, {method: 'GET'});
   if (!res.ok) {
-    throw new Error('something wrong with searching products by their title');
+    throw new Error('something wrong with fetching products');
   }
   const data = await res.json();
 

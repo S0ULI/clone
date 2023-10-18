@@ -10,7 +10,7 @@ import Card from '../cards/Card';
 import Link from 'next/link';
 import SectionWrapper from '../layout/SectionWrapper';
 
-const Slider = ({ cards, sort, title }) => {
+const Slider = ({ cards, category, title }) => {
   return (
     <div className="w-full">
       <SectionWrapper mSt="flex flex-col gap-7" px8={'sm:px-8'}>
@@ -18,7 +18,7 @@ const Slider = ({ cards, sort, title }) => {
         <div className='w-full flex justify-between items-center'>
           <h3 className='text-xl text-secondary-color font-bold'>{title}</h3>
         <Link
-          href={`/products?sort=${sort}`}
+          href={`/products?category=${category}`}
           className="w-fit hover:underline text-[#1f1f1f]"
         >
           All

@@ -1,11 +1,11 @@
 import Cards from '@/app/components/cards/Cards';
 import SectionWrapper from '@/app/components/layout/SectionWrapper';
+import { getProductsBySearch } from '@/app/lib/products-utils';
 // import Pagination from '@/app/components/pagination/Pagination';
-import { getProductBySearch } from '@/app/lib/products-util';
 
 const SearchPage = async ({ params }) => {
-  const data = await getProductBySearch(params.searchTerm);
-  const res = data.results;
+
+  const res = await getProductsBySearch(params.searchTerm);
 
   return (
     <SectionWrapper>

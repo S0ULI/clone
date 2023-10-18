@@ -74,6 +74,18 @@ export const getProductsByTitle = async (title) => {
   return products;
 };
 
+// getting products by their title
+export const getProductsBySearch = async (searchTerm) => {
+  console.log(searchTerm, 'inside db');
+  const products = await prisma.product.findMany({
+    where: {
+      title: { contains: searchTerm },
+    },
+  });
+  
+  return products;
+};
+
 // getting producst by their title in a cetagory
 export const getProductsByTitleInCategory = async (category, title) => {
   const products = await prisma.product.findMany({
