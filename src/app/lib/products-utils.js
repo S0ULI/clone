@@ -1,6 +1,7 @@
 // deffinning Domain and Fetch Options
 
-const domain = 'http://localhost:3000';
+// const domain = 'http://localhost:3000';
+const domain = 'https://clone-flame-nine.vercel.app';
 
 const getOptions = {
   method: 'GET',
