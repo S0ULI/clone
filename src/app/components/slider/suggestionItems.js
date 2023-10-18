@@ -1,29 +1,39 @@
 const sugg = 
 [
     {
-        title: 'The Seventh Seal (1957)',
-        description: 'When disillusioned Swedish knight Antonius Block returns home from the Crusades to find his country in the grips of the Black Death, he challenges Death to a chess match for his life. Tormented by the belief that God does not exist, Block sets off on a journey, meeting up with traveling players Jof and his wife, Mia, and becoming determined to evade Death long enough to commit one redemptive act while he still lives.',
-        image: '/gallery/pic.jpg'
+        title: 'Modern & Simple',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eros a metus commodo aliquet. Donec semper convallis est in venenatis. Nunc ut aliquam sapien. Nulla semper purus ac quam cursus, in tristique lorem fringilla. Aliquam sodales dolor scelerisque, volutpat nulla non, semper urna. Maecenas id justo lobortis, interdum tellus at, gravida lorem. Morbi commodo eleifend tincidunt.',
+        image: 'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&q=80&w=1470&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
-        title: 'Rashomon (1950)',
-        description: 'Brimming with action while incisively examining the nature of truth, "Rashomon" is perhaps the finest film ever to investigate the philosophy of justice. Through an ingenious use of camera and flashbacks, Kurosawa reveals the complexities of human nature as four people recount different versions of the story of a mans murder and the rape of his wife.',
-        image: '/gallery/rashomon.jpg'
+        title: 'Local',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eros a metus commodo aliquet. Donec semper convallis est in venenatis. Nunc ut aliquam sapien. Nulla semper purus ac quam cursus, in tristique lorem fringilla. Aliquam sodales dolor scelerisque, volutpat nulla non, semper urna. Maecenas id justo lobortis, interdum tellus at, gravida lorem. Morbi commodo eleifend tincidunt.',
+        image: 'https://images.unsplash.com/photo-1609709295948-17d77cb2a69b?auto=format&fit=crop&q=80&w=1288&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
-        title: 'Harakiri (1962)',
-        description: 'Down-on-his-luck veteran Tsugumo Hanshirō enters the courtyard of the prosperous House of Iyi. Unemployed, and with no family, he hopes to find a place to commit seppuku—and a worthy second to deliver the coup de grâce in his suicide ritual. The senior counselor for the Iyi clan questions the ronins resolve and integrity, suspecting Hanshirō of seeking charity rather than an honorable end. What follows is a pair of interlocking stories which lay bare the difference between honor and respect, and promises to examine the legendary foundations of the Samurai code.',
-        image: '/gallery/harakiri.jpg'
+        title: 'Minimal',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eros a metus commodo aliquet. Donec semper convallis est in venenatis. Nunc ut aliquam sapien. Nulla semper purus ac quam cursus, in tristique lorem fringilla. Aliquam sodales dolor scelerisque, volutpat nulla non, semper urna. Maecenas id justo lobortis, interdum tellus at, gravida lorem. Morbi commodo eleifend tincidunt.',
+        image: 'https://images.unsplash.com/photo-1499971442178-8c10fdf5f6ac?auto=format&fit=crop&q=80&w=1291&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
-        title: 'Apocalypse Now (1979)',
-        description: 'At the height of the Vietnam war, Captain Benjamin Willard is sent on a dangerous mission that, officially, "does not exist, nor will it ever exist." His goal is to locate - and eliminate - a mysterious Green Beret Colonel named Walter Kurtz, who has been leading his personal army on illegal guerrilla missions into enemy territory.',
-        image: '/gallery/apocalypse-now.jpg'
+        title: 'Gray',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eros a metus commodo aliquet. Donec semper convallis est in venenatis. Nunc ut aliquam sapien. Nulla semper purus ac quam cursus, in tristique lorem fringilla. Aliquam sodales dolor scelerisque, volutpat nulla non, semper urna. Maecenas id justo lobortis, interdum tellus at, gravida lorem. Morbi commodo eleifend tincidunt.',
+        image: 'https://images.unsplash.com/photo-1467043237213-65f2da53396f?auto=format&fit=crop&q=80&w=1287&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
-        title: 'Rear Window (1954)',
-        description: 'A wheelchair-bound photographer spies on his neighbors from his apartment window and becomes convinced one of them has committed murder.',
-        image: '/gallery/rear-window.jpg'
+        title: 'Red',
+        description: 'Lorem ipsumros a metus commodo aliquet. Donec semper convallis est in venenatis. Nunc ut aliquam sapien. Nulla semper purus ac quam cursus, in tristique lorem fringilla. Aliquam sodales dolor scelerisque, volutpat nulla non, semper urna. Maecenas id justo lobortis, interdum tellus at, gravida lorem. Morbi commodo eleifend tincidunt.',
+        image: 'https://images.unsplash.com/photo-1619646176605-b7417fb53b1e?auto=format&fit=crop&q=80&w=1287&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    },
+    {
+        title: 'Brown',
+        description: 'obortis, interdum tellus at, gravida lorem. Morbi commodo eleifend tincidunt.',
+        image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&q=80&w=1412&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    },
+    {
+        title: 'Black',
+        description: 'Lorem ipsumros a metus commodo aliquet.',
+        image: 'https://images.unsplash.com/photo-1529720317453-c8da503f2051?auto=format&fit=crop&q=80&w=1470&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     }
 ]
 

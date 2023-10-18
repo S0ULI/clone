@@ -1,7 +1,7 @@
 'use client';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Navigation } from 'swiper/modules';
+import { Navigation, Keyboard } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,7 +15,7 @@ const Slider = ({ cards, category, title }) => {
     <div className="w-full">
       <SectionWrapper mSt="flex flex-col gap-7" px8={'sm:px-8'}>
         <span className='w-full h-[1px] bg-black/10 block'></span>
-        <div className='w-full flex justify-between items-center'>
+        <div className='w-full flex justify-between items-center px-8 sm:px-0'>
           <h3 className='text-xl text-secondary-color font-bold'>{title}</h3>
         <Link
           href={`/products?category=${category}`}
@@ -27,8 +27,10 @@ const Slider = ({ cards, category, title }) => {
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
+          centeredSlides={true}
+          centeredSlidesBounds={true}
           style={{
-            '--swiper-navigation-color': '#1f1f1f',
+            '--swiper-navigation-color': '#FC8C54',
           }}
           breakpoints={{
             640: {
@@ -41,10 +43,10 @@ const Slider = ({ cards, category, title }) => {
               slidesPerView: 4,
             },
           }}
-          freeMode={true}
           navigation={true}
           grabCursor={true}
-          modules={[FreeMode, Navigation]}
+          keyboard={{ enabled: true }}
+          modules={[Navigation, Keyboard]}
         >
           {cards.map((card) => {
             return (
@@ -53,19 +55,12 @@ const Slider = ({ cards, category, title }) => {
               </SwiperSlide>
             );
           })}
-          <div
-            slot="wrapper-start"
-            className="w-fit pr-5 flex flex-col justify-around items-center text-sm text-white/40"
-          >
-            <span>Swipe 👉</span>
-            <span></span>
-          </div>
+          <div slot="wrapper-start"><span className='w-8 block sm:hidden'></span></div>
           <div
             slot="wrapper-end"
-            className="w-fit pr-5 flex flex-col justify-around items-center text-sm text-white/40"
+            className="w-fit pr-5 flex flex-col justify-around items-center text-xl text-white/40"
           >
-            <span>This is The End...</span>
-            <span></span>
+            <span>...</span>
           </div>
         </Swiper>
       </SectionWrapper>

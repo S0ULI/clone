@@ -9,7 +9,7 @@ const Providers = ({ children }) => {
     <ThemeProvider enableSystem={true} attribute="class">
       <CartContextProvider>
         <main className="bg-background-color-p dark:bg-dark-background-color-p">
-          <div className='pt-[132px] sm:pt-[156px] min-h-screen w-full flex flex-col relative'>
+          <div className='pt-[132px] sm:pt-[140px] min-h-screen w-full flex flex-col relative'>
             {children}
           </div>
         </main>

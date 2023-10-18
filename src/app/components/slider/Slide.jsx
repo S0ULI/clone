@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import SectionWrapper from '../layout/SectionWrapper';
 
 const Slide = ({ item }) => {
@@ -25,9 +26,9 @@ const Slide = ({ item }) => {
             {item.description}
           </p>
         </div>
-        <button className="bg-secondary-color rounded-xl py-2 px-4 w-fit self-end">
-          Add to Favorites
-        </button>
+        <Link href='/products' className="bg-secondary-color rounded-xl py-2 px-4 w-fit self-end hover:bg-primary-color transition-colors duration-300">
+          See The Collection
+        </Link>
       </SectionWrapper>
     </>
   );

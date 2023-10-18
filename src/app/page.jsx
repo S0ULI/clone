@@ -11,7 +11,7 @@ export default async function Home() {
   const shirts = await getAllProducts('shirt')
   const pants = await getAllProducts('pants')
   return (
-    <div className='w-full flex flex-col flex-start gap-4'>
+    <div className='w-full flex flex-col flex-start gap-8'>
       <SliderParallax/>
       <Slider category='jacket' title='Jackets' cards={jackets}/>
       <Slider category='shirt' title='Shirts' cards={shirts}/>

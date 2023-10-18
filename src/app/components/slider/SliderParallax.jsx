@@ -63,15 +63,3 @@ const SliderParallax = () => {
 };
 
 export default SliderParallax;
-
-// data-swiper-parallax="-300"
-// .parallax-bg {
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     width: 130%;
-//     height: 100%;
-//     -webkit-background-size: cover;
-//     background-size: cover;
-//     background-position: center;
-//   }

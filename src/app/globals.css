@@ -87,7 +87,7 @@ html {
     height: 425px
   }
   .my-swiper {
-    height: calc(100vh - 156px) !important;
+    height: calc(100vh - 140px) !important;
   }
 }
 @media screen and (min-width: 1300px) {
@@ -116,7 +116,7 @@ html {
 /* slider  */
 .my-swiper {
   height: calc(100vh - 132px);
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
 }
 .swiper {
@@ -137,4 +137,30 @@ html {
   inset: 0;
   background: #000;
   opacity: 0.6;
+}
+
+/*  */
+/*  */
+/*  */
+
+:root {
+  --primary: #6a59ff;
+  --white: #ffffff;
+  --bg: #f5f5f5;
+}
+
+@media (min-width: 2260px) {
+  html {
+    zoom: 1.4;
+  }
+}
+
+@media (min-width: 3860px) {
+  html {
+    zoom: 2;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

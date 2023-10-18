@@ -17,20 +17,19 @@ const Header = () => {
   const cartCtx = useContext(CartContext);
   const cartBadge = cartCtx.totalProducts;
 
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   useEffect(() => {
-    setToggle(false)
-  }, [pathname])
-  
+    setToggle(false);
+  }, [pathname]);
+
   const clickHandler = () => {
-    if(!toggle) {
-      setToggle(true)
+    if (!toggle) {
+      setToggle(true);
+    } else {
+      setToggle(false);
     }
-    else {
-      setToggle(false)
-    }
-  }
+  };
 
   useEffect(() => {
     let lastScroll = Number;
@@ -51,13 +50,11 @@ const Header = () => {
 
       lastScroll = currentScroll;
     });
-
-    
   }, [scroll]);
 
   return (
     <header
-      className={`bg-header-bg-color/90 backdrop-blur-md fixed top-0 left-0 w-full z-[99] transition ease duration-300 origin-top ${
+      className={`bg-header-bg-color/90 backdrop-blur-md fixed top-0 left-0 w-full z-[99] transition ease duration-300 origin-top sm:h-[140px] overflow-hidden ${
         !toggle ? scroll : ''
       }`}
     >
@@ -69,15 +66,19 @@ const Header = () => {
             <DarkModeSwitch />
           </div>
           <div className="block sm:hidden">
-            <MobileNavBarToggle click={clickHandler}  toggle={toggle} />
+            <MobileNavBarToggle click={clickHandler} toggle={toggle} />
           </div>
         </div>
-        <div className='w-full pt-4 pb-1'>
-        <Search />
+        <div className="w-full pt-4 pb-1">
+          <Search />
         </div>
-          <div className={`w-full flex flex-col gap-8 overflow-hidden ${toggle ? 'h-screen' : 'h-0'} transition-height ease duration-300`}>
-            <Navbar cartBadge={cartBadge} />
-          </div>
+        <div
+          className={`w-full flex flex-col gap-8 overflow-hidden ${
+            toggle ? 'h-screen' : 'h-0'
+          } transition-height ease duration-300`}
+        >
+          <Navbar cartBadge={cartBadge} />
+        </div>
       </SectionWrapper>
     </header>
   );
