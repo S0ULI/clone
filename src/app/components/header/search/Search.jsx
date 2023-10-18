@@ -37,7 +37,7 @@ const Search = () => {
     }
   }, [searchValue]);
 
-  const onFocousHandler = (e) => {
+  const onFocusHandler = (e) => {
     if(searchValue.length > 3){
       setShowSearchPop(true)
     }
@@ -60,7 +60,9 @@ const Search = () => {
   };
 
   return (
-    <div className="relative">
+    <>
+    <div className={`absolute w-screen h-screen inset-0 ${!showSearchPop && 'hidden'}`} onClick={onBlurHandler}></div>
+    <div className="relative" tabIndex="0" onFocus={onFocusHandler}>
       <form
         className="bg-background-color-c/10 rounded-xl flex justify-between items-center gap-4 py-2 px-4 mb-2"
         onSubmit={submitHandler}
@@ -74,8 +76,6 @@ const Search = () => {
           value={searchValue}
           onChange={onChangeHandler}
           className="outline-none text-sm text-dark-bright-text-color bg-transparent w-full"
-          onFocus={onFocousHandler}
-          onBlur={onBlurHandler}
         />
         <button
           disabled={!searchValue}
@@ -88,7 +88,7 @@ const Search = () => {
       <div
         className={`${
           !showSearchPop && 'hidden'
-        } bg-[#2e2d2aff] text-[#cccccc] absolute top-[125%] left-0 w-full p-4 rounded-xl`}
+        } bg-background-color-c/10 sm:bg-[#2e2d2aff] text-[#cccccc] sm:absolute sm:top-[125%] left-0 w-full p-4 rounded-xl`}
       >
         {searchLoadign && (
           <span className="w-full py-2 block transition-color px-4">
@@ -114,6 +114,7 @@ const Search = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
