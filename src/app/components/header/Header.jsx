@@ -54,7 +54,7 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-header-bg-color/90 backdrop-blur-md fixed top-0 left-0 w-full z-[99] transition ease duration-300 origin-top sm:h-[140px] overflow-hidden ${
+      className={`bg-header-bg-color/90 backdrop-blur-md fixed top-0 left-0 w-full z-[99] transition ease duration-300 origin-top sm:h-[140px] ${
         !toggle ? scroll : ''
       }`}
     >
