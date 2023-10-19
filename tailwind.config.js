@@ -22,7 +22,7 @@ module.exports = {
         'background-color-c': '#ffffff',
         'foreground-color': '#000000',
         //dark mode
-        'dark-background-color-p': '#2d353c', // changed
+        'dark-background-color-p': '#02131C', // changed
         'dark-background-color-c': '#1f1f1f',
         'dark-foreground-color': '#ffffff',
 

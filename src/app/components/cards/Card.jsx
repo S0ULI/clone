@@ -8,7 +8,7 @@ const Card = ({ data }) => {
   const { id, title, slug, rate, image, description } = data;
 
   return (
-    <div className='flex flex-col w-[17rem] group bg-background-color-c dark:bg-foreground-color rounded-xl overflow-hidden select-none'>
+    <div className='flex flex-col w-5/6 sm:w-[17rem] group bg-background-color-c dark:bg-foreground-color rounded-xl overflow-hidden select-none'>
     <Link
       href={`/products/${id}?=${slug}`}
       className="flex flex-col"
@@ -19,7 +19,7 @@ const Card = ({ data }) => {
         height={282}
         placeholder="blur"
         blurDataURL="/spinner.svg"
-        className='max-w-full h-60 object-cover grayscale group-hover:grayscale-0 transition-filter duration-300'
+        className='max-w-full h-[19rem] sm:h-60 object-cover grayscale group-hover:grayscale-0 transition-filter duration-300'
         src={image || '/logo.svg'}
       />
       <div className="flex flex-col items-center text-center gap-4 p-4">
