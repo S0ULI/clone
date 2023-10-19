@@ -13,9 +13,11 @@ export default async function Home() {
   return (
     <div className='w-full flex flex-col flex-start gap-8'>
       <SliderParallax/>
+      <div className='flex flex-col gap-10'>
       <Slider category='jacket' title='Jackets' cards={jackets}/>
       <Slider category='shirt' title='Shirts' cards={shirts}/>
       <Slider category='pants' title='Pants' cards={pants}/>
+      </div>
     </div>
   );
 }

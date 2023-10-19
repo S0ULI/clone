@@ -115,6 +115,7 @@ html {
 /* slider  */
 /* slider  */
 .my-swiper {
+  height: calc(100vh - 132px);
   height: calc(100dvh - 132px);
   /* overflow: hidden; */
   position: relative;

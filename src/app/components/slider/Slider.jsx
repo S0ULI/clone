@@ -12,14 +12,18 @@ import SectionWrapper from '../layout/SectionWrapper';
 
 const Slider = ({ cards, category, title }) => {
   return (
-    <div className="w-full">
-      <SectionWrapper mSt="flex flex-col gap-7" px8={'sm:px-8'}>
-        <span className='w-full h-[1px] bg-black/10 block'></span>
+      <SectionWrapper mSt="flex flex-col gap-7 pt-6" px8={'sm:px-8'} mtn={true}>
+        {/* border-t-2  border-dark-background-color-p dark:border-background-color-p */}
         <div className='w-full flex justify-between items-center px-8 sm:px-0'>
-          <h3 className='text-xl text-secondary-color font-bold'>{title}</h3>
         <Link
           href={`/products?category=${category}`}
-          className="w-fit hover:underline text-[#1f1f1f]"
+          className="w-fit hover:underline text-[#1f1f1f] dark:text-[#cccccc]"
+        >
+          <h3 className='text-xl text-secondary-color font-bold'>{title}</h3>
+        </Link>
+        <Link
+          href={`/products?category=${category}`}
+          className="w-fit hover:underline text-[#1f1f1f] dark:text-[#cccccc]"
         >
           All
         </Link>
@@ -27,7 +31,6 @@ const Slider = ({ cards, category, title }) => {
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
-          centeredSlides={true}
           centeredSlidesBounds={true}
           style={{
             '--swiper-navigation-color': '#FC8C54',
@@ -51,11 +54,12 @@ const Slider = ({ cards, category, title }) => {
           {cards.map((card) => {
             return (
               <SwiperSlide key={card.id}>
+                <div className='w-full flex justify-center items-center'>
                 <Card data={card} />
+                </div>
               </SwiperSlide>
             );
           })}
-          <div slot="wrapper-start"><span className='w-8 block sm:hidden'></span></div>
           <div
             slot="wrapper-end"
             className="w-fit pr-5 flex flex-col justify-around items-center text-xl text-white/40"
@@ -64,7 +68,6 @@ const Slider = ({ cards, category, title }) => {
           </div>
         </Swiper>
       </SectionWrapper>
-    </div>
   );
 };
 
