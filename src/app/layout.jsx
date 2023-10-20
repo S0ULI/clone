@@ -1,8 +1,6 @@
 import localFont from 'next/font/local';
 import Providers from './providers';
 import Header from './components/header/Header';
-import { ClerkProvider } from '@clerk/nextjs';
-import { dark } from '@clerk/themes';
 
 import './globals.css';
 import Footer from './components/footer/Footer';
@@ -39,9 +37,6 @@ export const metadata = {
 // JSX Function
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider appearance={{
-      baseTheme: dark,
-    }}>
       <html lang="en" suppressHydrationWarning>
         <body className={poppins.className + ' z-0'}>
           <Providers>
@@ -51,6 +46,5 @@ export default function RootLayout({ children }) {
           </Providers>
         </body>
       </html>
-    </ClerkProvider>
   );
 }

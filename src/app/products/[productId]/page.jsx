@@ -3,18 +3,12 @@ import Image from 'next/image';
 import SectionWrapper from '@/app/components/layout/SectionWrapper';
 import RatingProgress from '@/app/components/rating-progress/RatingProgress';
 import AddToCart from './AddToCart';
-import { auth } from '@clerk/nextjs';
 import { getProductById } from '@/app/lib/products-utils';
 import Link from 'next/link';
 
 const page = async ({ params }) => {
   const productId = params.productId;
   const data = await getProductById(productId)
-  const {userId} = auth();
-  let loged = false;
-  if(userId){
-    loged = true
-  }
 
   const {
     title,
@@ -74,7 +68,7 @@ const page = async ({ params }) => {
               </Link>
             ))}
           </div>
-          <AddToCart id={productId} data={data} loged={loged} myStyle='mt-6'/>
+          <AddToCart id={productId} data={data} myStyle='mt-6'/>
         </div>
       </div>
     </SectionWrapper>

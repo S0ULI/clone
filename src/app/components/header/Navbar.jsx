@@ -1,8 +1,5 @@
 'use client';
 
-import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
-import { useAuth } from '@clerk/nextjs';
-
 import { BsArrowRight } from 'react-icons/bs';
 import NavItem from './NavItem';
 import DarkModeSwitch from './DarkModeSwitch';
@@ -15,7 +12,7 @@ const Navbar = ({ cartBadge }) => {
           <NavItem title="About" link="/about" Icon={BsArrowRight} />
           <NavItem title="Products" link="/products" Icon={BsArrowRight} />
           <NavItem title="Home" link="/" Icon={BsArrowRight} />
-          <SignedIn>
+          {/* <SignedIn> */}
             <NavItem
               title="Cart"
               link="/cart"
@@ -23,20 +20,20 @@ const Navbar = ({ cartBadge }) => {
               badge={cartBadge}
             />
             <NavItem title="Profile" link="/profile" Icon={BsArrowRight} />
-          </SignedIn>
-          <SignedOut>
+          {/* </SignedIn> */}
+          {/* <SignedOut> */}
             <NavItem
               title="Sign in"
               link="/sign-in"
               Icon={BsArrowRight}
               primary={true}
             />
-          </SignedOut>
+          {/* </SignedOut> */}
         </ul>
       </nav>
       <div className="flex justify-between items-center w-full px-3">
-        <SignedIn>
-          <div>
+        {/* <SignedIn> */}
+          {/* <div>
             <UserButton
               afterSignOutUrl="/"
               userProfileMode="navigation"
@@ -54,8 +51,8 @@ const Navbar = ({ cartBadge }) => {
                 },
               }}
             />
-          </div>
-        </SignedIn>
+          </div> */}
+        {/* </SignedIn> */}
         <div className="sm:hidden">
           <DarkModeSwitch />
         </div>
