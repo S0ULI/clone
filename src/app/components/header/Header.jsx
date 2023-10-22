@@ -61,7 +61,7 @@ const Header = () => {
       <SectionWrapper mSt={'py-4 flex flex-col'} mtn={true}>
         <div className="flex justify-between items-center gap-12">
           <Logo />
-          <div className="gap-6 w-fit hidden sm:flex">
+          <div className="gap-12 w-fit hidden sm:flex">
             <Navbar cartBadge={cartBadge} />
             <DarkModeSwitch />
           </div>
