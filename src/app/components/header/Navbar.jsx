@@ -14,6 +14,7 @@ const Navbar = ({ cartBadge }) => {
     <>
       <nav className="w-full">
         <ul className="flex flex-col sm:flex-row sm:gap-6 text-lg sm:text-sm justify-between">
+          <NavItem title="Admin" link="/admin-dashboard" Icon={BsArrowRight} />
           <NavItem title="About" link="/about" Icon={BsArrowRight} />
           <NavItem title="Products" link="/products" Icon={BsArrowRight} />
           <NavItem title="Home" link="/" Icon={BsArrowRight} />
