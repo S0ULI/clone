@@ -1,8 +1,11 @@
 import { getUserByEmail } from "../../../../../prisma/users";
 import { passwordValidator } from "@/app/lib/users-auth";
+import { PrismaAdapter } from "@auth/prisma-adapter";
 import CredentialsProvider from "next-auth/providers/credentials";
+import prisma from "../../../../../prisma/prismadb";
 
 const authOptions = {
+    adapter: PrismaAdapter(prisma),
     providers: [
         CredentialsProvider({
             name: 'credentials',
