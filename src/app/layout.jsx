@@ -1,4 +1,5 @@
 import localFont from 'next/font/local';
+import { Analytics } from '@vercel/analytics/react';
 import Providers from './providers';
 import Header from './components/header/Header';
 import { ClerkProvider } from '@clerk/nextjs';
@@ -48,6 +49,7 @@ export default function RootLayout({ children }) {
             <Header />
             {children}
             <Footer/>
+            <Analytics/>
           </Providers>
         </body>
       </html>
