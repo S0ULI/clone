@@ -2,8 +2,11 @@
 
 import { NextResponse } from 'next/server';
 
-import { deleteProduct, getProductById, updateProduct } from '../../../../../prisma/products';
-
+import {
+  deleteProduct,
+  getProductById,
+  updateProduct,
+} from '../../../../../prisma/products';
 
 // get deatailPage of a product
 export const GET = async (req, { params }) => {
@@ -22,7 +25,6 @@ export const GET = async (req, { params }) => {
     }
 
     return NextResponse.json(product);
-
   } catch (err) {
     return NextResponse.json(
       {
@@ -33,7 +35,6 @@ export const GET = async (req, { params }) => {
     );
   }
 };
-
 
 // Update a Product
 export const PATCH = async (req, { params }) => {
