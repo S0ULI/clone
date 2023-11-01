@@ -32,8 +32,8 @@ const poppins = localFont({
 
 // Defining Metadata
 export const metadata = {
-  title: 'clone',
-  description: 'something',
+  title: 'Shopper',
+  description: 'shopper clothing e-commerce',
 };
 
 // JSX Function
