@@ -8,7 +8,7 @@ const ModalConfirm = ({ cancelHandler, confirmHandler, task }) => {
         <button onClick={cancelHandler} className='text-2xl text-primary-color self-end'>
           <RxCross2 />
         </button>
-            <p className='text-slate-900 text-lg'>Are You Sure? 👉👈🥺</p>
+            <p className='text-slate-900 text-lg'>Are You Sure?</p>
             <p className='text-slate-500 text-sm'>{`You Want to ${task}`}</p>
         </div>
         <div className='w-full flex justify-between items-center'>
