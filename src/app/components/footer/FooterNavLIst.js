@@ -12,7 +12,7 @@ const list =
                 href: '/about'
             },
             {
-                title: 'ptoducts',
+                title: 'Products',
                 href: '/products'
             }
         ]
@@ -21,50 +21,16 @@ const list =
         header: 'Top Ones',
         items: [
             {
-                title: 'Top Rated',
-                href: '/products?sort=top_rated'
+                title: 'Shirts',
+                href: '/products?category=shirt'
             },
             {
-                title: 'Most Popular',
-                href: '/products?sort=popular'
+                title: 'Jackets',
+                href: '/products?category=jacket'
             },
             {
-                title: 'Coming Up',
-                href: '/products?sort=upcoming'
-            }
-        ]
-    },
-    {
-        header: 'Links',
-        items: [
-            {
-                title: 'Home',
-                href: '/'
-            },
-            {
-                title: 'About us',
-                href: '/about'
-            },
-            {
-                title: 'ptoducts',
-                href: '/products'
-            }
-        ]
-    },
-    {
-        header: 'Something else',
-        items: [
-            {
-                title: 'Home',
-                href: '/'
-            },
-            {
-                title: 'About us',
-                href: '/about'
-            },
-            {
-                title: 'ptoducts',
-                href: '/products'
+                title: 'hoodie',
+                href: '/products?category=hoodie'
             }
         ]
     },
