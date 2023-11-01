@@ -34,12 +34,13 @@ const AddToCart = ({ id, data, myStyle }) => {
   return (
     <>
     <button
-      onClick={(isLoaded && userId) ? toggleCartStatusHandler : modalHandler}
+      // onClick={(isLoaded && userId) ? toggleCartStatusHandler : modalHandler}
+      onClick={toggleCartStatusHandler}
       className={`hover:bg-shop-button-color bg-secondary-color/80 dark:hover:bg-background-color-c dark:text-text-color-dark dark:bg-cyan-600  py-4 text-background-color-c rounded-xl transition-all duration-300 ${myStyle}`}
     >
-      {productStatus ? 'Remove from Favorites' : 'Add to Favorites'}
+      {productStatus ? 'Remove from Your Cart' : 'Add to Your Cart'}
     </button>
-    {!userId && modalShow && <Backdrop cancelHandler={cancelHandler}/>}
+    {/* {!userId && modalShow && <Backdrop cancelHandler={cancelHandler}/>} */}
     </>
   );
 };

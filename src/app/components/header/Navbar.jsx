@@ -15,13 +15,13 @@ const Navbar = ({ cartBadge }) => {
           <NavItem title="About" link="/about" Icon={BsArrowRight} />
           <NavItem title="Products" link="/products" Icon={BsArrowRight} />
           <NavItem title="Home" link="/" Icon={BsArrowRight} />
-          <SignedIn>
             <NavItem
               title="Cart"
               link="/cart"
               Icon={BsArrowRight}
               badge={cartBadge}
             />
+          <SignedIn>
             <NavItem title="Profile" link="/profile" Icon={BsArrowRight} />
           </SignedIn>
           <SignedOut>
